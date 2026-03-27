@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090b12"/>
+      <stop offset="55%" stop-color="#101522"/>
+      <stop offset="100%" stop-color="#0a0d14"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1b15d"/>
+      <stop offset="100%" stop-color="#76d7c4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="170" cy="95" r="140" fill="#76d7c4" opacity="0.12"/>
+  <circle cx="1040" cy="120" r="170" fill="#f1b15d" opacity="0.14"/>
+  <circle cx="985" cy="540" r="210" fill="#76d7c4" opacity="0.08"/>
+  <rect x="56" y="56" width="1088" height="518" rx="34" fill="none" stroke="#ffffff" stroke-opacity="0.12"/>
+  <rect x="84" y="88" width="490" height="454" rx="28" fill="#0f1421" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="120" y="170" fill="#76d7c4" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">PORTFOLIO 2026</text>
+  <text x="120" y="255" fill="#f4f1ea" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700">Shreya Dey</text>
+  <text x="120" y="325" fill="#d5dcef" font-family="Arial, Helvetica, sans-serif" font-size="34">AI/ML, Data Science, Research,</text>
+  <text x="120" y="372" fill="#d5dcef" font-family="Arial, Helvetica, sans-serif" font-size="34">and Full-Stack Engineering</text>
+  <text x="120" y="452" fill="#f1b15d" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Building reliable products with a strong engineering mindset</text>
+  <rect x="702" y="118" width="368" height="154" rx="28" fill="#121828" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="738" y="178" fill="#f1b15d" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">8.51</text>
+  <text x="738" y="214" fill="#d5dcef" font-family="Arial, Helvetica, sans-serif" font-size="22">B.Tech CGPA after 7th semester</text>
+  <rect x="702" y="302" width="368" height="92" rx="24" fill="#121828" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="738" y="360" fill="#f4f1ea" font-family="Arial, Helvetica, sans-serif" font-size="28">1 IEEE publication</text>
+  <rect x="702" y="418" width="368" height="92" rx="24" fill="#121828" stroke="#ffffff" stroke-opacity="0.08"/>
+  <text x="738" y="476" fill="#f4f1ea" font-family="Arial, Helvetica, sans-serif" font-size="28">2+ flagship projects</text>
+</svg>

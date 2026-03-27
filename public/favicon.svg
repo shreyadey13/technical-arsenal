@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Shreya Dey monogram">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1b15d" />
+      <stop offset="100%" stop-color="#76d7c4" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#0f1421" />
+  <rect x="10" y="10" width="108" height="108" rx="24" fill="none" stroke="url(#bg)" stroke-width="4" />
+  <path d="M33 40c7-8 17-12 30-12 18 0 29 8 29 22 0 10-5 17-15 20 12 3 19 11 19 23 0 18-14 29-36 29-13 0-24-4-32-10l9-15c6 4 13 7 21 7 11 0 18-5 18-13 0-9-8-13-23-13H45V65h8c14 0 21-4 21-13 0-8-6-12-15-12-8 0-14 3-19 8z" fill="url(#bg)"/>
+</svg>
