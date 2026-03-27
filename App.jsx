@@ -63,6 +63,24 @@ const focusCards = [
   },
 ];
 
+const availabilityTags = [
+  "Open to 2026 graduate roles",
+  "SDE and AI/ML opportunities",
+  "Data analyst and consultancy roles",
+  "Recruiter-friendly portfolio",
+];
+
+const motionStripItems = [
+  "AI/ML",
+  "Data Analytics",
+  "Full-Stack Development",
+  "Research Experience",
+  "IEEE Publication",
+  "Tech Consultancy",
+  "HR-Friendly Communication",
+  "Problem Solving",
+];
+
 const detailCards = [
   {
     title: "Relevant Coursework",
@@ -252,6 +270,24 @@ const strengths = [
   "Adaptable across engineering, analytics, research, and cross-functional collaboration",
 ];
 
+const valueCards = [
+  {
+    icon: <FiCode />,
+    title: "I build beyond prototypes",
+    text: "I enjoy taking ideas from experimentation to polished interfaces, stable APIs, and usable end-to-end experiences.",
+  },
+  {
+    icon: <FiBarChart2 />,
+    title: "I think analytically",
+    text: "My work is grounded in evaluation, structured reasoning, and clear communication of technical and business-facing insights.",
+  },
+  {
+    icon: <FiLayers />,
+    title: "I collaborate calmly",
+    text: "I bring a steady, team-oriented approach to research, product work, and cross-functional problem solving.",
+  },
+];
+
 const researchPanels = [
   {
     title: "Flood Detection Using Satellite Imagery",
@@ -343,8 +379,8 @@ function App() {
           <div className="hero-copy">
             <div className="eyebrow">Portfolio 2026</div>
             <h1>
-              Building reliable AI, data, and digital products with a calm,
-              engineering-first mindset.
+              Building reliable <span>AI, data, and digital products</span>{" "}
+              with a calm, engineering-first mindset.
             </h1>
             <p className="hero-lead">
               I am Shreya Dey, a final-year Computer Science undergraduate at
@@ -385,6 +421,14 @@ function App() {
               </span>
             </div>
 
+            <div className="availability-row" aria-label="Current availability">
+              {availabilityTags.map((tag) => (
+                <span className="availability-chip" key={tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+
             <div className="hero-stats">
               {heroStats.map((stat) => (
                 <article className="stat-card" key={stat.label}>
@@ -412,6 +456,16 @@ function App() {
             </div>
             <ChatWidget />
           </div>
+        </div>
+      </section>
+
+      <section className="signal-strip" aria-label="Key focus areas">
+        <div className="signal-track">
+          {[...motionStripItems, ...motionStripItems].map((item, index) => (
+            <span className="signal-pill" key={`${item}-${index}`}>
+              {item}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -457,6 +511,29 @@ function App() {
               ))}
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section className="section-block">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Value</p>
+            <h2>What makes my work feel strong in both delivery and presentation.</h2>
+          </div>
+          <p className="section-summary">
+            I care about outcomes that look polished, communicate clearly, and
+            still hold up technically when you inspect the details.
+          </p>
+        </div>
+
+        <div className="value-grid">
+          {valueCards.map((card) => (
+            <article className="value-card" key={card.title}>
+              <div className="focus-icon">{card.icon}</div>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 

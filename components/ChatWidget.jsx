@@ -7,6 +7,10 @@ function ChatWidget() {
         I enjoy building thoughtful products across AI/ML, data science, and web
         development.
       </p>
+      <div className="chat-widget-status">
+        <span className="status-dot" />
+        <span>Open to conversations for 2026 roles</span>
+      </div>
       <div className="chat-widget-pills">
         <span>Open to SDE roles</span>
         <span>Research-minded</span>
