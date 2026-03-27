@@ -207,6 +207,8 @@ const projectCards = [
   {
     title: "TripCraft AI",
     type: "AI Travel Planner",
+    year: "2026",
+    accent: "featured-mint",
     description:
       "An AI-powered travel planning app that generates personalized day-wise itineraries, securely stores trips, and delivers a modern full-stack experience.",
     highlights: [
@@ -227,6 +229,8 @@ const projectCards = [
   {
     title: "Study Abroad-AI",
     type: "Recommendation Engine",
+    year: "2025",
+    accent: "featured-gold",
     description:
       "An AI-powered study abroad platform that combines profile-aware matching, dynamic filtering, scraping workflows, and ML-assisted recommendations.",
     highlights: [
@@ -746,37 +750,53 @@ function App() {
         <div className="project-grid">
           {projectCards.map((project, index) => (
             <article
-              className="project-card reveal-on-scroll"
+              className={`project-card project-showcase ${project.accent} reveal-on-scroll`}
               key={project.title}
               style={revealStyle(index)}
             >
-              <div className="project-topline">{project.type}</div>
-              <h3>{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <ul className="project-points">
-                {project.highlights.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <div className="pill-row">
-                {project.stack.map((item) => (
-                  <span className="pill" key={item}>
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <div className="project-links">
-                {project.links.map((link) => (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={link.href}
-                  >
-                    {link.label}
-                    <FaArrowRight />
-                  </a>
-                ))}
+              <div className="project-showcase-shell">
+                <div className="project-overview">
+                  <div className="project-meta-row">
+                    <div className="project-topline">{project.type}</div>
+                    <span className="project-year">{project.year}</span>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+
+                  <div className="project-stack-block">
+                    <p className="project-section-label">Stack</p>
+                    <div className="pill-row">
+                      {project.stack.map((item) => (
+                        <span className="pill" key={item}>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="project-detail-panel">
+                  <p className="project-section-label">Highlights</p>
+                  <ul className="project-points">
+                    {project.highlights.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+
+                  <div className="project-links">
+                    {project.links.map((link) => (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={link.href}
+                      >
+                        {link.label}
+                        <FaArrowRight />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </article>
           ))}
