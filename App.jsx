@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   FaArrowRight,
+  FaChevronUp,
   FaDownload,
   FaEnvelope,
   FaFileAlt,
@@ -354,6 +355,8 @@ const contactLinks = [
 
 function App() {
   const resumeUrl = `${import.meta.env.BASE_URL}Shreya-Dey-Resume.html`;
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal-on-scroll");
@@ -377,6 +380,23 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+
+      setScrollProgress(progress);
+      setShowBackToTop(window.scrollY > 420);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const revealStyle = (index) => ({
     "--stagger": `${index * 90}ms`,
   });
@@ -390,6 +410,11 @@ function App() {
 
   return (
     <main className="site-shell interactive-shell" onMouseMove={handlePointerMove}>
+      <div
+        className="scroll-progress"
+        aria-hidden="true"
+        style={{ transform: `scaleX(${scrollProgress / 100})` }}
+      />
       <div className="site-noise" />
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
@@ -894,6 +919,14 @@ function App() {
         <span>© 2026 Shreya Dey</span>
         <span>Designed to showcase AI, data, and software engineering work.</span>
       </footer>
+      <button
+        className={`back-to-top ${showBackToTop ? "is-visible" : ""}`}
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+      >
+        <FaChevronUp />
+      </button>
     </main>
   );
 }
