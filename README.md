@@ -53,3 +53,5 @@ Portfolio content is currently managed in:
 ```bash
 npm run lint
 ```
+
+Last deployment workflow cleanup: March 27, 2026.
