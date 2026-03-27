@@ -83,6 +83,21 @@ const motionStripItems = [
   "Problem Solving",
 ];
 
+const heroFocusCards = [
+  {
+    label: "Currently Focused",
+    title: "AI products, analytics workflows, and full-stack delivery",
+    text: "I enjoy combining research thinking, product polish, and practical engineering execution.",
+  },
+  {
+    label: "Best Fit Roles",
+    title: "SDE, AI/ML, data analyst, consultancy, and cross-functional roles",
+    text: "Open to teams that value thoughtful execution, adaptability, and strong communication.",
+  },
+];
+
+const heroSymbols = ["{ }", "< />", "AI", "SQL", "ML", "//"];
+
 const detailCards = [
   {
     title: "Relevant Coursework",
@@ -439,15 +454,15 @@ function App() {
           <div className="hero-copy">
             <div className="eyebrow">Portfolio 2026</div>
             <h1>
-              Building reliable <span>AI, data, and digital products</span>{" "}
-              with a calm, engineering-first mindset.
+              Designing <span>calm, high-impact digital work</span> across AI,
+              analytics, and product engineering.
             </h1>
             <p className="hero-lead">
               I am Shreya Dey, a final-year Computer Science undergraduate at
-              KIIT with hands-on experience across AI/ML, data science, research,
-              analytics, and full-stack product development. I enjoy building
-              systems that are technically sound, visually polished, and
-              genuinely useful in practice.
+              KIIT with hands-on experience across AI/ML, data science,
+              analytics, research, and full-stack development. I enjoy building
+              systems that feel reliable in engineering, sharp in thinking, and
+              polished in presentation.
             </p>
 
             <div className="hero-actions">
@@ -500,19 +515,39 @@ function App() {
           </div>
 
           <div className="hero-visual">
-            <div className="portrait-card">
-              <div className="portrait-frame">
-                <img
-                  src={profilePhoto}
-                  alt="Portrait of Shreya Dey"
-                  className="portrait"
-                />
+            <div className="hero-visual-stage">
+              <div className="hero-symbol-cloud" aria-hidden="true">
+                {heroSymbols.map((symbol, index) => (
+                  <span key={`${symbol}-${index}`} className={`hero-symbol hero-symbol-${index + 1}`}>
+                    {symbol}
+                  </span>
+                ))}
               </div>
-              <div className="portrait-caption">
-                <span>AI/ML</span>
-                <span>Data Science</span>
-                <span>Full Stack</span>
+
+              <div className="portrait-card">
+                <div className="portrait-frame">
+                  <img
+                    src={profilePhoto}
+                    alt="Portrait of Shreya Dey"
+                    className="portrait"
+                  />
+                </div>
+                <div className="portrait-caption">
+                  <span>AI/ML</span>
+                  <span>Data Science</span>
+                  <span>Full Stack</span>
+                </div>
               </div>
+            </div>
+
+            <div className="hero-side-grid">
+              {heroFocusCards.map((card) => (
+                <article className="hero-mini-card" key={card.label}>
+                  <p className="hero-mini-label">{card.label}</p>
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                </article>
+              ))}
             </div>
             <ChatWidget />
           </div>
