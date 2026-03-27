@@ -1,361 +1,638 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import ChatWidget from './components/ChatWidget';
+import {
+  FaArrowRight,
+  FaDownload,
+  FaEnvelope,
+  FaFileAlt,
+  FaGithub,
+  FaGraduationCap,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaRegLightbulb,
+  FaRocket,
+  FaTrophy,
+} from "react-icons/fa";
+import {
+  FiActivity,
+  FiBarChart2,
+  FiBookOpen,
+  FiBriefcase,
+  FiCode,
+  FiLayers,
+  FiSend,
+  FiTrendingUp,
+} from "react-icons/fi";
+import ChatWidget from "./components/ChatWidget";
+import profilePhoto from "./your-photo.jpg";
 import "./App.css";
 
+const navLinks = [
+  ["about", "About"],
+  ["journey", "Journey"],
+  ["skills", "Skills"],
+  ["projects", "Projects"],
+  ["achievements", "Achievements"],
+  ["research", "Research"],
+  ["certifications", "Certifications"],
+  ["contact", "Contact"],
+];
+
+const heroStats = [
+  { value: "8.51", label: "B.Tech CGPA after 7th semester" },
+  { value: "2+", label: "Flagship products built and shipped" },
+  { value: "1", label: "IEEE conference publication" },
+  { value: "2026", label: "Graduation year" },
+];
+
+const focusCards = [
+  {
+    icon: <FiLayers />,
+    title: "AI and ML Product Thinking",
+    text: "I enjoy turning exploratory ideas into products with clear problem framing, measurable outcomes, and solid UX.",
+  },
+  {
+    icon: <FiBarChart2 />,
+    title: "Data-Led Decision Making",
+    text: "From preprocessing to model evaluation, I work comfortably across the full data workflow and communicate findings clearly.",
+  },
+  {
+    icon: <FiCode />,
+    title: "Full-Stack Execution",
+    text: "I can move from model logic to APIs and front-end delivery, which helps me ship complete and usable solutions.",
+  },
+];
+
+const journey = [
+  {
+    icon: <FaGraduationCap />,
+    title: "B.Tech in Computer Science and Engineering",
+    meta: "Kalinga Institute of Industrial Technology (KIIT) | 2022 - 2026",
+    description:
+      "Current CGPA: 8.51 after 7th semester. Built a strong foundation across core CS, web development, data science, and machine learning.",
+  },
+  {
+    icon: <FaRocket />,
+    title: "Research Internship",
+    meta: "Mehta Family School of Data Science and AI, IIT Guwahati | Summer 2025",
+    description:
+      "Worked on flood detection from satellite imagery using CNN-based semantic segmentation and transfer learning for remote sensing workflows.",
+  },
+  {
+    icon: <FaTrophy />,
+    title: "Published Research",
+    meta: "IEEE Conference | 2025",
+    description:
+      "Co-authored work on climate change and agricultural yield forecasting using a hybrid LSTM and Random Forest modeling approach.",
+  },
+];
+
+const expertise = [
+  {
+    title: "Programming and Development",
+    icon: <FiCode />,
+    items: ["Java", "Python", "C", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "AI, ML, and Analytics",
+    icon: <FiTrendingUp />,
+    items: [
+      "Machine Learning",
+      "Data Preprocessing",
+      "Model Evaluation",
+      "Data Visualization",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Matplotlib",
+    ],
+  },
+  {
+    title: "Web and Backend",
+    icon: <FiBriefcase />,
+    items: ["React", "Vite", "Node.js", "Express.js", "FastAPI", "Tailwind CSS"],
+  },
+  {
+    title: "Database and Tooling",
+    icon: <FiActivity />,
+    items: ["SQL", "MongoDB", "Git/GitHub", "Postman", "VS Code", "Excel"],
+  },
+];
+
+const projectCards = [
+  {
+    title: "TripCraft AI",
+    type: "AI Travel Planner",
+    description:
+      "A personalized itinerary generator that uses Gemini 2.5 Pro to create day-wise travel plans, manage saved trips, and deliver a polished responsive experience.",
+    highlights: [
+      "Built with React and TypeScript for a clean, scalable front end",
+      "Used Supabase for secure trip persistence and retrieval",
+      "Structured prompts and outputs for practical itinerary quality",
+    ],
+    stack: ["React", "TypeScript", "Gemini AI", "Supabase"],
+    links: [{ label: "Live Demo", href: "https://tripify-xi.vercel.app/" }],
+  },
+  {
+    title: "Study Abroad-AI",
+    type: "Recommendation Engine",
+    description:
+      "A recommendation platform for study abroad aspirants that combines profile-aware matching, web scraping pipelines, and ML-driven ranking.",
+    highlights: [
+      "Used scraping pipelines to source university-related signals",
+      "Matched students to suitable universities using ML logic",
+      "Connected FastAPI and React for an end-to-end product flow",
+    ],
+    stack: ["Python", "FastAPI", "React", "Scikit-learn"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/shreyadey13/StudyAbroad-Project",
+      },
+    ],
+  },
+];
+
+const achievements = [
+  {
+    title: "Research Internship at IIT Guwahati",
+    detail:
+      "Contributed to satellite-imagery flood detection research using deep learning and transfer learning methods.",
+  },
+  {
+    title: "IEEE Conference Publication",
+    detail:
+      "Published research on climate-aware agricultural yield forecasting using hybrid predictive modeling.",
+  },
+  {
+    title: "Full-Stack + AI Portfolio Projects",
+    detail:
+      "Built projects that combine front-end interfaces, backend services, and applied AI logic in one workflow.",
+  },
+  {
+    title: "Strong Academic Consistency",
+    detail:
+      "Maintained an 8.51 CGPA through the 7th semester while growing across AI/ML, data science, and software engineering.",
+  },
+];
+
+const strengths = [
+  "Problem solving with a structured engineering mindset",
+  "Comfortable switching between model development and product implementation",
+  "Able to communicate technical ideas clearly to both technical and non-technical audiences",
+  "Motivated by real-world impact, not just proof-of-concept demos",
+];
+
+const researchPanels = [
+  {
+    title: "Flood Detection Using Satellite Imagery",
+    label: "Research Internship",
+    description:
+      "Designed and improved deep learning workflows for semantic segmentation of water bodies from satellite imagery, with emphasis on transfer learning and robust remote sensing analysis.",
+    badges: [
+      "Transfer Learning",
+      "Deep Learning",
+      "Semantic Segmentation",
+      "Remote Sensing",
+    ],
+  },
+  {
+    title: "Quantifying the Impact of Climate Change on Agriculture Yield in Odisha",
+    label: "Publication",
+    description:
+      "Proposed a hybrid forecasting approach using LSTM and Random Forest to analyze how shifting climate variables affect crop productivity across time.",
+    badges: ["LSTM", "Random Forest", "Forecasting", "Climate Analytics"],
+    link: "https://drive.google.com/file/d/10LqzdxdJVZT_jE771glSb40GZegOPuny/view?usp=sharing",
+  },
+];
+
+const certifications = [
+  "Generative AI (IBM)",
+  "Google Data Analytics",
+  "Full-Stack Web Development (DevTown)",
+  "Postman API Expert",
+];
+
+const contactLinks = [
+  {
+    icon: <FaEnvelope />,
+    label: "Email",
+    value: "shreyadey1312@gmail.com",
+    href: "mailto:shreyadey1312@gmail.com",
+  },
+  {
+    icon: <FaLinkedin />,
+    label: "LinkedIn",
+    value: "linkedin.com/in/shreya-dey-b018b0254",
+    href: "https://www.linkedin.com/in/shreya-dey-b018b0254",
+  },
+  {
+    icon: <FaGithub />,
+    label: "GitHub",
+    value: "github.com/shreyadey13",
+    href: "https://github.com/shreyadey13",
+  },
+  {
+    icon: <FaMapMarkerAlt />,
+    label: "Location",
+    value: "Shillong, Meghalaya",
+  },
+];
+
 function App() {
+  const resumeUrl = `${import.meta.env.BASE_URL}Shreya-Dey-Resume.html`;
+
   return (
-    <>
-      {/* Background Glow Effects */}
-      <div className="glow-orb glow-1" />
-      <div className="glow-orb glow-2" />
+    <main className="site-shell">
+      <div className="site-noise" />
+      <div className="ambient ambient-one" />
+      <div className="ambient ambient-two" />
 
-      <main className="page">
-        {/* Hero Section */}
-        <header className="hero glass">
-          <div className="hero-content">
-            {/* Chat Widget (Alien) */}
-            <ChatWidget />
-
-            <div className="hero-header">
-              <div className="name glitch" data-text="Shreya Dey">Shreya Dey</div>
-              <div className="tagline">
-                <div className="typing-container">SDE • AI/ML • Data Science • Web Dev</div>
-              </div>
-              <div className="floating-text">| Architecting Scalable Solutions |</div>
-            </div>
-
-            <div className="hero-details">
-              <div className="contact-row">
-                <span className="contact-item">
-                  <FaEnvelope /> <a href="mailto:shreyadey1312@gmail.com">shreyadey1312@gmail.com</a>
-                </span>
-                <span className="contact-item">
-                  <FaMapMarkerAlt /> Shillong, Meghalaya
-                </span>
-                <span className="contact-item">
-                  <FaLinkedin /> <a href="https://www.linkedin.com/in/shreya-dey-b018b0254" target="_blank" rel="noreferrer">LinkedIn</a>
-                </span>
-                <span className="contact-item">
-                  <FaGithub /> <a href="https://github.com/shreyadey13" target="_blank" rel="noreferrer">GitHub</a>
-                </span>
-              </div>
-
-              <div className="chip-row">
-                <span className="chip">Data Science</span>
-                <span className="chip">Machine Learning</span>
-                <span className="chip">Artificial Intelligence</span>
-                <span className="chip">Web Development</span>
-                <span className="chip">Software Development</span>
-                
-              </div>
-            </div>
-
-            <nav className="hero-nav">
-              <a href="#about">About</a>
-              <a href="#education">Education</a>
-              <a href="#skills">Skills</a>
-              <a href="#projects">Projects</a>
-              <a href="#research">Research Internship</a>
-              <a href="#publications">Publications</a>
-              <a href="#certificates">Certificates</a>
-            </nav>
-          </div>
-
-          <div className="hero-avatar">
-            <div className="avatar-orbit">
-              <img src="/your-photo.jpg" alt="Shreya Dey" className="avatar" />
-            </div>
-          </div>
+      <section className="hero-panel">
+        <header className="topbar">
+          <a className="brand" href="#top">
+            <span className="brand-mark">SD</span>
+            <span className="brand-text">Shreya Dey</span>
+          </a>
+          <nav className="topnav">
+            {navLinks.map(([id, label]) => (
+              <a href={`#${id}`} key={id}>
+                {label}
+              </a>
+            ))}
+          </nav>
         </header>
 
-        {/* Main Content */}
-        <section className="main">
-          
-          {/* About */}
-          <section id="about" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-            {/* Floating Background Shapes */}
-            <div className="floating-shape shape-1" />
-            <div className="floating-shape shape-2" />
-            <div className="floating-shape shape-3" />
-            
-            {/* Floating Characters */}
-            <div className="floating-char char-robot">🤖</div>
-            <div className="floating-char char-planet">🪐</div>
+        <div className="hero-grid" id="top">
+          <div className="hero-copy">
+            <div className="eyebrow">Portfolio 2026</div>
+            <h1>
+              Building reliable AI, data, and web experiences with a strong
+              engineering mindset.
+            </h1>
+            <p className="hero-lead">
+              I am Shreya Dey, a final-year Computer Science undergraduate focused
+              on AI/ML, data science, and full-stack product development. I care
+              about shipping work that is both technically sound and genuinely
+              useful.
+            </p>
 
-            <div className="about-content">
-              <div className="section-header animate-fade-up">
-                <h2 className="section-title">About Me</h2>
-                <span className="section-sub">Professional Profile</span>
-              </div>
-              <div className="section-body">
-                <p className="highlight-line animate-fade-up delay-1">
-                  <span>Building Intelligence.</span> <span>Transforming complex data into actionable insights.</span>
-                </p>
-                <h1 className="animate-fade-up delay-2">
-                  I'm an <span>AI/ML</span> & <span>Data Science</span> enthusiast also interested in <span>Software Engineering</span> and <span>Full Stack Development</span>.
-                </h1>
-                <p className="animate-fade-up delay-3">
-                  Final-year Computer Science & Engineering undergraduate at KIIT with a strong foundation in core CS principles. 
-                  I have hands-on experience in AI/ML and Data Science through impactful projects, along with practical exposure to Full Stack Development. 
-                  Passionate about Software Engineering, I bring strong analytical and problem-solving skills to the table, being an adaptable and patient observer who thrives in solving complex challenges.
-                </p>
-                <p className="animate-fade-up delay-3">
-                  I am eager to leverage my diverse technical background to solve real-world problems and contribute to innovative solutions in AI/ML, Data Science, and Data Analytics.
-                </p>
-              </div>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects">
+                View Projects
+                <FaArrowRight />
+              </a>
+              <a
+                className="button button-secondary"
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Resume
+                <FaFileAlt />
+              </a>
+              <a
+                className="button button-secondary"
+                href="mailto:shreyadey1312@gmail.com"
+              >
+                Let&apos;s Connect
+                <FiSend />
+              </a>
             </div>
-          </section>
 
-          {/* Education */}
-          <section id="education" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-            <div className="floating-shape shape-2" style={{ top: '10%', left: '80%' }} />
-            <div className="floating-shape shape-3" style={{ bottom: '20%', left: '10%' }} />
-            <div className="floating-char char-rocket">🚀</div>
-            
-            <div className="section-header animate-fade-up">
-              <h2 className="section-title">Education</h2>
-              <span className="section-sub">Academic Background</span>
+            <div className="hero-note">
+              <FaRegLightbulb />
+              <span>Interested in SDE, AI/ML, and data-focused opportunities.</span>
             </div>
-            <div className="section-body">
-              <ul className="timeline">
-                <li className="timeline-item animate-fade-up delay-1">
-                  <div className="timeline-title">B.Tech in Computer Science & Engineering (CSE)</div>
-                  <div className="timeline-meta">
-                    Kalinga Institute of Industrial Technology (KIIT) · 2022 – 2026
-                  </div>
-                  <div className="timeline-desc">
-                    CGPA: 8.42 (Current) · Specialization in Core CS, Web Development, Data Science & Machine Learning.
-                  </div>
-                </li>
-                <li className="timeline-item animate-fade-up delay-2">
-                  <div className="timeline-title">Higher Secondary (Science)</div>
-                  <div className="timeline-meta">
-                    St. Anthony's Higher Secondary School · 2022
-                  </div>
-                  <div className="timeline-desc">
-                    Percentage: 77.2% · Focus on Physics, Chemistry, Mathematics, and Computer Science.
-                  </div>
-                </li>
-                <li className="timeline-item animate-fade-up delay-3">
-                  <div className="timeline-title">Matriculation (SSLC)</div>
-                  <div className="timeline-meta">
-                    St. John's Whitehall · 2020
-                  </div>
-                  <div className="timeline-desc">
-                    Percentage: 82.33% · Basic Foundation in all subjects.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
 
-          {/* Skills */}
-          <section id="skills" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-             <div className="floating-shape shape-1" style={{ top: '5%', left: '5%' }} />
-             <div className="floating-shape shape-3" style={{ bottom: '10%', right: '5%' }} />
-             <div className="floating-char char-laptop">💻</div>
-
-            <div className="section-header animate-fade-up">
-              <h2 className="section-title">Technical Arsenal</h2>
-              <span className="section-sub">Core Competencies</span>
-            </div>
-            <div className="section-body">
-              <p className="label animate-fade-up delay-1">Programming & Development</p>
-              <div className="chip-row animate-fade-up delay-1">
-                <span className="chip">Java</span>
-                <span className="chip">Python</span>
-                <span className="chip">C</span>
-                <span className="chip">JavaScript</span>
-                <span className="chip">HTML</span>
-                <span className="chip">CSS</span>
-              </div>
-
-              <p className="label animate-fade-up delay-2">Data Science & Analytics</p>
-              <div className="chip-row animate-fade-up delay-2">
-                <span className="chip">Machine Learning</span>
-                <span className="chip">Data Preprocessing</span>
-                <span className="chip">Model Evaluation</span>
-                <span className="chip">Data Visualization</span>
-                <span className="chip">Pandas</span>
-                <span className="chip">NumPy</span>
-                <span className="chip">Scikit-learn</span>
-                <span className="chip">Matplotlib</span>
-              </div>
-
-              <p className="label animate-fade-up delay-2">Web Technologies</p>
-              <div className="chip-row animate-fade-up delay-2">
-                <span className="chip">React (with Vite)</span>
-                <span className="chip">Node.js</span>
-                <span className="chip">Express.js</span>
-                <span className="chip">FastAPI</span>
-                <span className="chip">Tailwind CSS</span>
-              </div>
-
-              <p className="label animate-fade-up delay-3">Databases</p>
-              <div className="chip-row animate-fade-up delay-3">
-                <span className="chip">SQL</span>
-                <span className="chip">MongoDB</span>
-              </div>
-
-              <p className="label animate-fade-up delay-3">Tools & Platforms</p>
-              <div className="chip-row animate-fade-up delay-3">
-                <span className="chip">Git/GitHub</span>
-                <span className="chip">Postman</span>
-                <span className="chip">VS Code</span>
-                <span className="chip">Google Suite</span>
-                <span className="chip">Microsoft Excel</span>
-              </div>
-
-              <p className="label animate-fade-up delay-3">Professional Skills</p>
-              <div className="chip-row animate-fade-up delay-3">
-                <span className="chip">Problem Solving</span>
-                <span className="chip">Analytical Thinking</span>
-                <span className="chip">Research</span>
-                <span className="chip">Team Collaboration</span>
-                <span className="chip">Communication</span>
-                <span className="chip">Adaptability</span>
-              </div>
-            </div>
-          </section>
-          
-          {/* Research */}
-          <section id="research" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-            <div className="floating-shape shape-3" style={{ top: '20%', left: '15%' }} />
-            <div className="floating-char char-dna">🧬</div>
-            
-            <div className="section-header animate-fade-up">
-              <h2 className="section-title">Research Internship</h2>
-              <span className="section-sub">Academic Contributions</span>
-            </div>
-            <div className="section-body">
-              <ul className="timeline">
-                <li className="timeline-item animate-fade-up delay-1">
-                  <div className="timeline-title">Flood Detection Using Satellite Imagery</div>
-                  <div className="timeline-meta">
-                    Mehta Family School of Data Science & AI, IIT Guwahati · Summer 2025
-                  </div>
-                  <div className="timeline-desc">
-                    Conducted advanced research on flood detection using satellite imagery. Developed and fine-tuned 
-                    CNN architectures for semantic segmentation of water bodies,used the concept of Transfer Learning achieving significant improvements in accuracy.
-                  </div>
-                  <div className="badge-row">
-                    <span className="badge">Transfer Learning</span>
-                    <span className="badge">Deep Learning</span>
-                    <span className="badge">Remote Sensing</span>
-                    <span className="badge">Computer Vision</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-
-          {/* Projects */}
-          <section id="projects" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-            <div className="floating-shape shape-2" style={{ top: '15%', right: '10%' }} />
-            <div className="floating-shape shape-1" style={{ bottom: '10%', left: '5%' }} />
-            <div className="floating-char char-brain">🧠</div>
-
-            <div className="section-header animate-fade-up">
-              <h2 className="section-title">Featured Projects</h2>
-              <span className="section-sub">Engineering & Innovation</span>
-            </div>
-            <div className="section-body">
-              <div className="cards">
-                {/* TripCraft AI */}
-                <article className="card animate-fade-up delay-1">
-                  <div className="card-title">TripCraft AI</div>
-                  <div className="card-meta">AI-Powered Itinerary Generator</div>
-                  <p className="card-desc">
-                    A sophisticated travel planning platform leveraging Gemini 2.5 Pro to generate personalized, 
-                    day-wise itineraries. Features secure trip storage via Supabase and a responsive UI built with React & Tailwind.
-                  </p>
-                  <div className="chip-row">
-                    <span className="chip">React</span>
-                    <span className="chip">TypeScript</span>
-                    <span className="chip">Gemini AI</span>
-                    <span className="chip">Supabase</span>
-                  </div>
-                  <div className="card-links" style={{ marginTop: '1rem' }}>
-                    <a href="https://tripify-xi.vercel.app/" target="_blank" rel="noreferrer">Live Demo</a>
-                  </div>
+            <div className="hero-stats">
+              {heroStats.map((stat) => (
+                <article className="stat-card" key={stat.label}>
+                  <div className="stat-value">{stat.value}</div>
+                  <div className="stat-label">{stat.label}</div>
                 </article>
+              ))}
+            </div>
+          </div>
 
-                {/* Study Abroad */}
-                <article className="card animate-fade-up delay-2">
-                  <div className="card-title">Study Abroad-AI</div>
-                  <div className="card-meta">University Recommendation Engine</div>
-                  <p className="card-desc">
-                    An intelligent recommendation system for study abroad aspirants. Utilizes web scraping pipelines 
-                    and ML algorithms to match students with universities based on profile and preferences.
-                  </p>
-                  <div className="chip-row">
-                    <span className="chip">Python</span>
-                    <span className="chip">FastAPI</span>
-                    <span className="chip">React</span>
-                    <span className="chip">Scikit-learn</span>
-                  </div>
-                  <div className="card-links" style={{ marginTop: '1rem' }}>
-                    <a href="https://github.com/shreyadey13/StudyAbroad-Project" target="_blank" rel="noreferrer">GitHub</a>
-                  </div>
-                </article>
+          <div className="hero-visual">
+            <div className="portrait-card">
+              <div className="portrait-frame">
+                <img
+                  src={profilePhoto}
+                  alt="Portrait of Shreya Dey"
+                  className="portrait"
+                />
+              </div>
+              <div className="portrait-caption">
+                <span>AI/ML</span>
+                <span>Data Science</span>
+                <span>Full Stack</span>
               </div>
             </div>
-          </section>
+            <ChatWidget />
+          </div>
+        </div>
+      </section>
 
-          {/* Publications */}
-          <section id="publications" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-            <div className="floating-shape shape-1" style={{ bottom: '20%', right: '10%' }} />
-            <div className="floating-char char-book">📚</div>
+      <section className="section-block" id="about">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">About</p>
+            <h2>A sharper, more complete picture of what I bring.</h2>
+          </div>
+          <p className="section-summary">
+            My work sits at the intersection of engineering discipline, analytical
+            thinking, and curiosity-driven building. I enjoy moving from problem
+            definition to a finished solution that people can actually use.
+          </p>
+        </div>
 
-            <div className="section-header animate-fade-up">
-              <h2 className="section-title">Publications</h2>
-              <span className="section-sub">Peer-Reviewed Works</span>
-            </div>
-            <div className="section-body">
-              <ul className="timeline">
-                <li className="timeline-item animate-fade-up delay-1">
-                  <div className="timeline-title">
-                    Quantifying the Impact of Climate Change on Agriculture Yield in Odisha
-                  </div>
-                  <div className="timeline-meta">IEEE Conference · 2025</div>
-                  <div className="timeline-desc">
-                    Proposed a hybrid LSTM-Random Forest model to forecast crop yields under varying climate scenarios. 
-                    Analyzed decadal climate patterns to predict agricultural productivity shifts.
-                  </div>
-                  <div className="card-links" style={{ marginTop: '0.5rem' }}>
-                    <a href="https://drive.google.com/file/d/10LqzdxdJVZT_jE771glSb40GZegOPuny/view?usp=sharing" target="_blank" rel="noreferrer">Read Paper</a>
-                  </div>
-                </li>
+        <div className="focus-grid">
+          {focusCards.map((card) => (
+            <article className="focus-card" key={card.title}>
+              <div className="focus-icon">{card.icon}</div>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="two-column-panel">
+          <article className="insight-card">
+            <p className="section-kicker">What Sets Me Apart</p>
+            <h3>Balanced between research depth and product execution.</h3>
+            <p>
+              I like work that starts with a real problem and ends with a polished,
+              useful outcome. That usually means combining analysis,
+              experimentation, implementation, and iteration instead of staying in
+              only one layer.
+            </p>
+          </article>
+          <article className="insight-card">
+            <p className="section-kicker">Core Strengths</p>
+            <ul className="check-list">
+              {strengths.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-block" id="journey">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Journey</p>
+            <h2>Academic momentum backed by research and practical execution.</h2>
+          </div>
+        </div>
+
+        <div className="timeline-shell">
+          {journey.map((item) => (
+            <article className="timeline-card" key={item.title}>
+              <div className="timeline-icon">{item.icon}</div>
+              <div className="timeline-content">
+                <p className="timeline-meta">{item.meta}</p>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block" id="skills">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Skills</p>
+            <h2>
+              Technical depth across data workflows, product delivery, and
+              engineering basics.
+            </h2>
+          </div>
+        </div>
+
+        <div className="expertise-grid">
+          {expertise.map((group) => (
+            <article className="expertise-card" key={group.title}>
+              <div className="expertise-title">
+                <span>{group.icon}</span>
+                <h3>{group.title}</h3>
+              </div>
+              <div className="pill-row">
+                {group.items.map((item) => (
+                  <span className="pill" key={item}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block" id="projects">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Projects</p>
+            <h2>Selected work that reflects how I think and build.</h2>
+          </div>
+          <p className="section-summary">
+            These projects combine applied AI, product design choices, and the
+            engineering needed to turn ideas into usable interfaces.
+          </p>
+        </div>
+
+        <div className="project-grid">
+          {projectCards.map((project) => (
+            <article className="project-card" key={project.title}>
+              <div className="project-topline">{project.type}</div>
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <ul className="project-points">
+                {project.highlights.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
               </ul>
-            </div>
-          </section>
-
-          {/* Certificates */}
-          <section id="certificates" className="section glass" style={{ position: 'relative', overflow: 'hidden' }}>
-            <div className="floating-shape shape-2" style={{ top: '10%', left: '50%' }} />
-            <div className="floating-char char-trophy">🏆</div>
-
-            <div className="section-header animate-fade-up">
-              <h2 className="section-title">Certifications</h2>
-              <span className="section-sub">Continuous Learning</span>
-            </div>
-            <div className="section-body">
-              <div className="chip-row animate-fade-up delay-1">
-                <span className="chip">Generative AI (IBM)</span>
-                <span className="chip">Google Data Analytics</span>
-                <span className="chip">Full-Stack Web Dev (DevTown)</span>
-                <span className="chip">Postman API Expert</span>
+              <div className="pill-row">
+                {project.stack.map((item) => (
+                  <span className="pill" key={item}>
+                    {item}
+                  </span>
+                ))}
               </div>
-            </div>
-          </section>
+              <div className="project-links">
+                {project.links.map((link) => (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={link.href}
+                  >
+                    {link.label}
+                    <FaArrowRight />
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-          <footer>
-            © 2025 Shreya Dey · All rights reserved
-          </footer>
-        </section>
-      </main>
-    </>
+      <section className="section-block" id="achievements">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Achievements</p>
+            <h2>Signals that reinforce both credibility and growth.</h2>
+          </div>
+          <p className="section-summary">
+            These are the milestones that best show how I am progressing as an
+            engineer, researcher, and builder.
+          </p>
+        </div>
+
+        <div className="achievement-grid">
+          {achievements.map((item) => (
+            <article className="achievement-card" key={item.title}>
+              <div className="achievement-badge">
+                <FaTrophy />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block" id="research">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Research and Publication</p>
+            <h2>Evidence of curiosity, rigor, and long-form technical work.</h2>
+          </div>
+        </div>
+
+        <div className="research-grid">
+          {researchPanels.map((panel) => (
+            <article className="research-card" key={panel.title}>
+              <div className="research-label">
+                {panel.label === "Publication" ? <FiBookOpen /> : <FaFileAlt />}
+                <span>{panel.label}</span>
+              </div>
+              <h3>{panel.title}</h3>
+              <p>{panel.description}</p>
+              <div className="pill-row">
+                {panel.badges.map((badge) => (
+                  <span className="pill" key={badge}>
+                    {badge}
+                  </span>
+                ))}
+              </div>
+              {panel.link ? (
+                <a
+                  className="inline-link"
+                  href={panel.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Read publication
+                  <FaArrowRight />
+                </a>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block" id="certifications">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Certifications</p>
+            <h2>Continuous learning that supports hands-on building.</h2>
+          </div>
+        </div>
+
+        <div className="cert-grid">
+          {certifications.map((certificate) => (
+            <article className="cert-card" key={certificate}>
+              <span className="cert-icon">
+                <FiBookOpen />
+              </span>
+              <p>{certificate}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block contact-block" id="contact">
+        <div className="contact-panel">
+          <div className="contact-copy">
+            <p className="section-kicker">Contact</p>
+            <h2>
+              Open to meaningful work, thoughtful collaboration, and ambitious
+              ideas.
+            </h2>
+            <p>
+              If you are hiring for software engineering, AI/ML, or data-centric
+              roles, I would love to connect and discuss how I can contribute.
+            </p>
+            <div className="hero-actions">
+              <a
+                className="button button-primary"
+                href="mailto:shreyadey1312@gmail.com"
+              >
+                Email Me
+                <FaEnvelope />
+              </a>
+              <a
+                className="button button-secondary"
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Resume
+                <FaDownload />
+              </a>
+              <a
+                className="button button-secondary"
+                href="https://github.com/shreyadey13"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub
+                <FaGithub />
+              </a>
+            </div>
+          </div>
+
+          <div className="contact-card">
+            {contactLinks.map((item) => (
+              <div className="contact-row" key={item.label}>
+                <div className="contact-icon">{item.icon}</div>
+                <div>
+                  <p className="contact-label">{item.label}</p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <span className="contact-value">{item.value}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <span>© 2026 Shreya Dey</span>
+        <span>Designed to showcase AI, data, and software engineering work.</span>
+      </footer>
+    </main>
   );
 }
 

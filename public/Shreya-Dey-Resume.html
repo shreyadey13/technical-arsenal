@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreya Dey Resume</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #18202f;
+        --muted: #5d687d;
+        --accent: #bf7d2b;
+        --paper: #fffdfa;
+        --line: #e6dfd4;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: var(--ink);
+        background: #efe7dc;
+      }
+      .page {
+        width: min(920px, calc(100% - 24px));
+        margin: 24px auto;
+        padding: 40px;
+        background: var(--paper);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+      }
+      h1, h2, h3, p { margin: 0; }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid var(--line);
+      }
+      .title h1 { font-size: 2.25rem; }
+      .title p, .contact p, li { line-height: 1.6; }
+      .muted { color: var(--muted); }
+      .section { margin-top: 28px; }
+      .section h2 {
+        margin-bottom: 12px;
+        color: var(--accent);
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .entry { margin-bottom: 18px; }
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 4px;
+      }
+      ul { margin: 8px 0 0; padding-left: 18px; }
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 24px;
+      }
+      .toolbar {
+        width: min(920px, calc(100% - 24px));
+        margin: 24px auto 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .toolbar button {
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: var(--ink);
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      @media print {
+        body { background: white; }
+        .toolbar { display: none; }
+        .page {
+          width: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+      @media (max-width: 720px) {
+        .page { padding: 24px; }
+        .header, .entry-header, .skills {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button onclick="window.print()">Download / Print Resume</button>
+    </div>
+    <main class="page">
+      <section class="header">
+        <div class="title">
+          <h1>Shreya Dey</h1>
+          <p class="muted">Software Development Engineer | AI/ML | Data Science | Full Stack Development</p>
+        </div>
+        <div class="contact">
+          <p>Shillong, Meghalaya</p>
+          <p>shreyadey1312@gmail.com</p>
+          <p>github.com/shreyadey13</p>
+          <p>linkedin.com/in/shreya-dey-b018b0254</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Profile</h2>
+        <p class="muted">
+          Final-year Computer Science and Engineering undergraduate at KIIT with experience in AI/ML,
+          data science, research, and full-stack development. Interested in building practical, scalable
+          products and contributing to software engineering, data, and AI-focused roles.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Education</h2>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>B.Tech in Computer Science and Engineering, KIIT</strong>
+            <span class="muted">2022 - 2026</span>
+          </div>
+          <p class="muted">CGPA: 8.51 after 7th semester</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>Higher Secondary, St. Anthony's Higher Secondary School</strong>
+            <span class="muted">2022</span>
+          </div>
+          <p class="muted">77.2%</p>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>Matriculation, St. John's Whitehall</strong>
+            <span class="muted">2020</span>
+          </div>
+          <p class="muted">82.33%</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Projects</h2>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>TripCraft AI</strong>
+            <span class="muted">React, TypeScript, Gemini AI, Supabase</span>
+          </div>
+          <ul>
+            <li>Built an AI-powered itinerary generator with personalized day-wise travel planning.</li>
+            <li>Designed a responsive front end and integrated secure trip persistence.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>Study Abroad-AI</strong>
+            <span class="muted">Python, FastAPI, React, Scikit-learn</span>
+          </div>
+          <ul>
+            <li>Created a university recommendation platform using profile-based matching and ML workflows.</li>
+            <li>Integrated scraped data sources with a full-stack application flow.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Research and Publication</h2>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>Research Intern, IIT Guwahati</strong>
+            <span class="muted">Summer 2025</span>
+          </div>
+          <ul>
+            <li>Worked on flood detection using satellite imagery with CNN-based semantic segmentation.</li>
+            <li>Applied transfer learning to improve remote sensing model performance.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <strong>IEEE Conference Publication</strong>
+            <span class="muted">2025</span>
+          </div>
+          <ul>
+            <li>Co-authored research on climate change impact on agricultural yield in Odisha.</li>
+            <li>Used hybrid LSTM and Random Forest approaches for forecasting analysis.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+          <p><strong>Languages:</strong> Java, Python, C, JavaScript, HTML, CSS</p>
+          <p><strong>AI and Data:</strong> Machine Learning, Pandas, NumPy, Scikit-learn, Matplotlib</p>
+          <p><strong>Web:</strong> React, Vite, Node.js, Express.js, FastAPI, Tailwind CSS</p>
+          <p><strong>Tools:</strong> Git, GitHub, Postman, VS Code, Excel, MongoDB, SQL</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Certifications</h2>
+        <p class="muted">Generative AI (IBM) | Google Data Analytics | Full-Stack Web Development (DevTown) | Postman API Expert</p>
+      </section>
+    </main>
+  </body>
+  </html>

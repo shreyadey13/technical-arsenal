@@ -1,16 +1,55 @@
-# React + Vite
+# Shreya Dey Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium single-page portfolio built with React and Vite to showcase Shreya Dey's work across AI/ML, data science, research, and software engineering.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 7
+- CSS3
+- React Icons
 
-## React Compiler
+## Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+The app runs locally at the Vite development URL shown in the terminal.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+The production files are generated in `dist/`.
+
+## GitHub Pages Deployment
+
+This repository includes a GitHub Actions workflow for automatic deployment to GitHub Pages.
+
+1. Push the project to the `main` branch of the `technical-arsenal` repository.
+2. In GitHub, open `Settings -> Pages`.
+3. Set the source to `GitHub Actions`.
+4. Push changes to `main` and the workflow will build and deploy automatically.
+
+The Vite base path is configured automatically for GitHub Pages builds, so the site will work correctly at:
+
+`https://shreyadey13.github.io/technical-arsenal/`
+
+## Updating Content
+
+Portfolio content is currently managed in:
+
+- `App.jsx` for page sections and content
+- `App.css` for styling and layout
+- `your-photo.jpg` for the hero image
+
+## Linting
+
+```bash
+npm run lint
+```
