@@ -83,14 +83,6 @@ const motionStripItems = [
   "Problem Solving",
 ];
 
-const floatingGlyphs = [
-  { symbol: "{ }", className: "glyph-one" },
-  { symbol: "< />", className: "glyph-two" },
-  { symbol: "//", className: "glyph-three" },
-  { symbol: "*", className: "glyph-four" },
-  { symbol: "AI", className: "glyph-five" },
-];
-
 const detailCards = [
   {
     title: "Relevant Coursework",
@@ -429,16 +421,6 @@ function App() {
       <div className="pointer-glow" />
 
       <section className="hero-panel">
-        <div className="hero-orb hero-orb-one" aria-hidden="true" />
-        <div className="hero-orb hero-orb-two" aria-hidden="true" />
-        <div className="floating-glyphs" aria-hidden="true">
-          {floatingGlyphs.map((glyph) => (
-            <span className={`floating-glyph ${glyph.className}`} key={glyph.className}>
-              {glyph.symbol}
-            </span>
-          ))}
-        </div>
-
         <header className="topbar">
           <a className="brand" href="#top">
             <span className="brand-mark">SD</span>
@@ -455,17 +437,17 @@ function App() {
 
         <div className="hero-grid" id="top">
           <div className="hero-copy">
-            <div className="eyebrow">Mint Edition 2026</div>
+            <div className="eyebrow">Portfolio 2026</div>
             <h1>
-              Turning <span>AI, analytics, and product thinking</span> into
-              work that feels elegant, clear, and deeply useful.
+              Building reliable <span>AI, data, and digital products</span>{" "}
+              with a calm, engineering-first mindset.
             </h1>
             <p className="hero-lead">
               I am Shreya Dey, a final-year Computer Science undergraduate at
-              KIIT who enjoys blending AI/ML, data science, research, and
-              product-minded engineering into polished digital experiences. I
-              care about work that is technically grounded, visually memorable,
-              and genuinely practical.
+              KIIT with hands-on experience across AI/ML, data science, research,
+              analytics, and full-stack product development. I enjoy building
+              systems that are technically sound, visually polished, and
+              genuinely useful in practice.
             </p>
 
             <div className="hero-actions">
