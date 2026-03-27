@@ -68,10 +68,32 @@ img {
 }
 
 .site-shell {
+  --pointer-x: 50%;
+  --pointer-y: 24rem;
   position: relative;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
   padding: 24px 0 48px;
+}
+
+.interactive-shell {
+  isolation: isolate;
+}
+
+.pointer-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.38;
+  transform: translate(calc(var(--pointer-x) - 50%), calc(var(--pointer-y) - 50%));
+  background: radial-gradient(circle, rgba(118, 215, 196, 0.14), transparent 62%);
+  filter: blur(20px);
+  transition: transform 120ms ease-out;
 }
 
 .site-noise {
@@ -186,6 +208,7 @@ img {
 }
 
 .topnav a {
+  position: relative;
   padding: 0.62rem 0.9rem;
   border-radius: 999px;
   color: var(--muted-strong);
@@ -193,9 +216,26 @@ img {
   transition: var(--transition-smooth);
 }
 
+.topnav a::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.38rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(118, 215, 196, 0), rgba(118, 215, 196, 0.9), rgba(241, 177, 93, 0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-smooth);
+}
+
 .topnav a:hover {
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
+}
+
+.topnav a:hover::after {
+  transform: scaleX(1);
 }
 
 .hero-grid {
@@ -419,6 +459,10 @@ img {
   gap: 0.8rem;
   width: max-content;
   animation: marquee 26s linear infinite;
+}
+
+.signal-strip:hover .signal-track {
+  animation-play-state: paused;
 }
 
 .signal-pill {
@@ -994,6 +1038,20 @@ img {
   opacity: 1;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--stagger, 0ms);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .section-block:nth-of-type(2) { animation-delay: 0.08s; }
 .section-block:nth-of-type(3) { animation-delay: 0.16s; }
 .section-block:nth-of-type(4) { animation-delay: 0.24s; }
@@ -1076,12 +1134,21 @@ img {
   .cert-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .pointer-glow {
+    width: 22rem;
+    height: 22rem;
+  }
 }
 
 @media (max-width: 760px) {
   .site-shell {
     width: min(100% - 20px, 1180px);
     padding-top: 10px;
+  }
+
+  .pointer-glow {
+    display: none;
   }
 
   .hero-panel,
@@ -1120,5 +1187,25 @@ img {
 
   .footer {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  .pointer-glow {
+    display: none;
   }
 }

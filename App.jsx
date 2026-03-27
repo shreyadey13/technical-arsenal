@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   FaArrowRight,
   FaDownload,
@@ -354,11 +355,45 @@ const contactLinks = [
 function App() {
   const resumeUrl = `${import.meta.env.BASE_URL}Shreya-Dey-Resume.html`;
 
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal-on-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px",
+      },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const revealStyle = (index) => ({
+    "--stagger": `${index * 90}ms`,
+  });
+
+  const handlePointerMove = (event) => {
+    const root = event.currentTarget;
+    const rect = root.getBoundingClientRect();
+    root.style.setProperty("--pointer-x", `${event.clientX - rect.left}px`);
+    root.style.setProperty("--pointer-y", `${event.clientY - rect.top}px`);
+  };
+
   return (
-    <main className="site-shell">
+    <main className="site-shell interactive-shell" onMouseMove={handlePointerMove}>
       <div className="site-noise" />
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
+      <div className="pointer-glow" />
 
       <section className="hero-panel">
         <header className="topbar">
@@ -459,7 +494,7 @@ function App() {
         </div>
       </section>
 
-      <section className="signal-strip" aria-label="Key focus areas">
+      <section className="signal-strip reveal-on-scroll" aria-label="Key focus areas">
         <div className="signal-track">
           {[...motionStripItems, ...motionStripItems].map((item, index) => (
             <span className="signal-pill" key={`${item}-${index}`}>
@@ -469,7 +504,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="about">
+      <section className="section-block reveal-on-scroll" id="about">
         <div className="section-heading">
           <div>
             <p className="section-kicker">About</p>
@@ -483,8 +518,12 @@ function App() {
         </div>
 
         <div className="focus-grid">
-          {focusCards.map((card) => (
-            <article className="focus-card" key={card.title}>
+          {focusCards.map((card, index) => (
+            <article
+              className="focus-card reveal-on-scroll"
+              key={card.title}
+              style={revealStyle(index)}
+            >
               <div className="focus-icon">{card.icon}</div>
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -493,7 +532,7 @@ function App() {
         </div>
 
         <div className="two-column-panel">
-          <article className="insight-card">
+          <article className="insight-card reveal-on-scroll" style={revealStyle(0)}>
             <p className="section-kicker">What Sets Me Apart</p>
             <h3>Balanced between technical depth and product execution.</h3>
             <p>
@@ -503,7 +542,7 @@ function App() {
               communication instead of staying in only one layer.
             </p>
           </article>
-          <article className="insight-card">
+          <article className="insight-card reveal-on-scroll" style={revealStyle(1)}>
             <p className="section-kicker">Core Strengths</p>
             <ul className="check-list">
               {strengths.map((item) => (
@@ -514,7 +553,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section className="section-block reveal-on-scroll">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Value</p>
@@ -527,8 +566,12 @@ function App() {
         </div>
 
         <div className="value-grid">
-          {valueCards.map((card) => (
-            <article className="value-card" key={card.title}>
+          {valueCards.map((card, index) => (
+            <article
+              className="value-card reveal-on-scroll"
+              key={card.title}
+              style={revealStyle(index)}
+            >
               <div className="focus-icon">{card.icon}</div>
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -537,7 +580,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="readiness">
+      <section className="section-block reveal-on-scroll" id="readiness">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Readiness</p>
@@ -551,8 +594,12 @@ function App() {
         </div>
 
         <div className="detail-grid">
-          {detailCards.map((card) => (
-            <article className="insight-card detail-card" key={card.title}>
+          {detailCards.map((card, index) => (
+            <article
+              className="insight-card detail-card reveal-on-scroll"
+              key={card.title}
+              style={revealStyle(index)}
+            >
               <p className="section-kicker">{card.title}</p>
               <ul className="check-list">
                 {card.items.map((item) => (
@@ -564,7 +611,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="journey">
+      <section className="section-block reveal-on-scroll" id="journey">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Journey</p>
@@ -573,8 +620,12 @@ function App() {
         </div>
 
         <div className="timeline-shell">
-          {journey.map((item) => (
-            <article className="timeline-card" key={item.title}>
+          {journey.map((item, index) => (
+            <article
+              className="timeline-card reveal-on-scroll"
+              key={item.title}
+              style={revealStyle(index)}
+            >
               <div className="timeline-icon">{item.icon}</div>
               <div className="timeline-content">
                 <p className="timeline-meta">{item.meta}</p>
@@ -586,7 +637,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="skills">
+      <section className="section-block reveal-on-scroll" id="skills">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Skills</p>
@@ -598,8 +649,12 @@ function App() {
         </div>
 
         <div className="expertise-grid">
-          {expertise.map((group) => (
-            <article className="expertise-card" key={group.title}>
+          {expertise.map((group, index) => (
+            <article
+              className="expertise-card reveal-on-scroll"
+              key={group.title}
+              style={revealStyle(index)}
+            >
               <div className="expertise-title">
                 <span>{group.icon}</span>
                 <h3>{group.title}</h3>
@@ -616,7 +671,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="projects">
+      <section className="section-block reveal-on-scroll" id="projects">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Projects</p>
@@ -629,8 +684,12 @@ function App() {
         </div>
 
         <div className="project-grid">
-          {projectCards.map((project) => (
-            <article className="project-card" key={project.title}>
+          {projectCards.map((project, index) => (
+            <article
+              className="project-card reveal-on-scroll"
+              key={project.title}
+              style={revealStyle(index)}
+            >
               <div className="project-topline">{project.type}</div>
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
@@ -664,7 +723,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="achievements">
+      <section className="section-block reveal-on-scroll" id="achievements">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Achievements</p>
@@ -677,8 +736,12 @@ function App() {
         </div>
 
         <div className="achievement-grid">
-          {achievements.map((item) => (
-            <article className="achievement-card" key={item.title}>
+          {achievements.map((item, index) => (
+            <article
+              className="achievement-card reveal-on-scroll"
+              key={item.title}
+              style={revealStyle(index)}
+            >
               <div className="achievement-badge">
                 <FaTrophy />
               </div>
@@ -689,7 +752,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="research">
+      <section className="section-block reveal-on-scroll" id="research">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Research and Publication</p>
@@ -698,8 +761,12 @@ function App() {
         </div>
 
         <div className="research-grid">
-          {researchPanels.map((panel) => (
-            <article className="research-card" key={panel.title}>
+          {researchPanels.map((panel, index) => (
+            <article
+              className="research-card reveal-on-scroll"
+              key={panel.title}
+              style={revealStyle(index)}
+            >
               <div className="research-label">
                 {panel.label === "Publication" ? <FiBookOpen /> : <FaFileAlt />}
                 <span>{panel.label}</span>
@@ -729,7 +796,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block" id="certifications">
+      <section className="section-block reveal-on-scroll" id="certifications">
         <div className="section-heading">
           <div>
             <p className="section-kicker">Certifications</p>
@@ -738,8 +805,12 @@ function App() {
         </div>
 
         <div className="cert-grid">
-          {certifications.map((certificate) => (
-            <article className="cert-card" key={certificate}>
+          {certifications.map((certificate, index) => (
+            <article
+              className="cert-card reveal-on-scroll"
+              key={certificate}
+              style={revealStyle(index)}
+            >
               <span className="cert-icon">
                 <FiBookOpen />
               </span>
@@ -749,7 +820,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section-block contact-block" id="contact">
+      <section className="section-block contact-block reveal-on-scroll" id="contact">
         <div className="contact-panel">
           <div className="contact-copy">
             <p className="section-kicker">Contact</p>
@@ -791,9 +862,13 @@ function App() {
             </div>
           </div>
 
-          <div className="contact-card">
-            {contactLinks.map((item) => (
-              <div className="contact-row" key={item.label}>
+          <div className="contact-card reveal-on-scroll" style={revealStyle(1)}>
+            {contactLinks.map((item, index) => (
+              <div
+                className="contact-row reveal-on-scroll"
+                key={item.label}
+                style={revealStyle(index)}
+              >
                 <div className="contact-icon">{item.icon}</div>
                 <div>
                   <p className="contact-label">{item.label}</p>
