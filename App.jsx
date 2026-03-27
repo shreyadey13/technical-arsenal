@@ -7,6 +7,7 @@ import {
   FaGraduationCap,
   FaLinkedin,
   FaMapMarkerAlt,
+  FaPhoneAlt,
   FaRegLightbulb,
   FaRocket,
   FaTrophy,
@@ -27,6 +28,7 @@ import "./App.css";
 
 const navLinks = [
   ["about", "About"],
+  ["readiness", "Readiness"],
   ["journey", "Journey"],
   ["skills", "Skills"],
   ["projects", "Projects"],
@@ -38,7 +40,7 @@ const navLinks = [
 
 const heroStats = [
   { value: "8.51", label: "B.Tech CGPA after 7th semester" },
-  { value: "2+", label: "Flagship products built and shipped" },
+  { value: "5", label: "Certifications and job simulations" },
   { value: "1", label: "IEEE conference publication" },
   { value: "2026", label: "Graduation year" },
 ];
@@ -47,17 +49,46 @@ const focusCards = [
   {
     icon: <FiLayers />,
     title: "Applied AI Product Thinking",
-    text: "I enjoy shaping AI ideas into usable products with clear problem framing, measurable outcomes, and thoughtful user experience.",
+    text: "I enjoy turning AI ideas into polished products with clear problem framing, measurable outcomes, and a user experience that feels intentional.",
   },
   {
     icon: <FiBarChart2 />,
-    title: "Data-Led Decision Making",
-    text: "From preprocessing to evaluation, I am comfortable across the full data workflow and can communicate insights in a practical, decision-ready way.",
+    title: "Data and Analytics Readiness",
+    text: "From preprocessing and exploration to evaluation and storytelling, I am comfortable working across the full analytics workflow with business-facing clarity.",
   },
   {
     icon: <FiCode />,
     title: "End-to-End Execution",
-    text: "I can move from model logic to APIs and front-end delivery, which helps me ship polished solutions instead of disconnected prototypes.",
+    text: "I can move from model logic to APIs, databases, and front-end delivery, which helps me ship complete solutions instead of disconnected prototypes.",
+  },
+];
+
+const detailCards = [
+  {
+    title: "Relevant Coursework",
+    items: [
+      "Data Structures and Algorithms",
+      "Database Management Systems",
+      "Machine Learning and Deep Learning",
+      "Operating Systems",
+      "Computer Networks",
+      "Cloud Computing",
+    ],
+  },
+  {
+    title: "Languages",
+    items: ["English", "Hindi", "Bengali"],
+  },
+  {
+    title: "Professional Strengths",
+    items: [
+      "Problem solving",
+      "Analytical thinking",
+      "Research",
+      "Team collaboration",
+      "Communication",
+      "Adaptability",
+    ],
   },
 ];
 
@@ -74,7 +105,7 @@ const journey = [
     title: "Research Internship",
     meta: "Mehta Family School of Data Science and AI, IIT Guwahati | Summer 2025",
     description:
-      "Worked on flood detection from satellite imagery using CNN-based semantic segmentation and transfer learning for remote sensing workflows.",
+      "Contributed to flood detection research using satellite imagery and deep learning, with hands-on work in preprocessing, training pipelines, evaluation, and transfer learning.",
   },
   {
     icon: <FaTrophy />,
@@ -96,6 +127,7 @@ const expertise = [
     icon: <FiTrendingUp />,
     items: [
       "Machine Learning",
+      "Deep Learning",
       "Data Preprocessing",
       "Model Evaluation",
       "Data Visualization",
@@ -108,12 +140,31 @@ const expertise = [
   {
     title: "Web and Backend",
     icon: <FiBriefcase />,
-    items: ["React", "Vite", "Node.js", "Express.js", "FastAPI", "Tailwind CSS"],
+    items: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "Tailwind CSS",
+      "Supabase",
+    ],
   },
   {
     title: "Database and Tooling",
     icon: <FiActivity />,
-    items: ["SQL", "MongoDB", "Git/GitHub", "Postman", "VS Code", "Excel"],
+    items: [
+      "SQL",
+      "MongoDB",
+      "PostgreSQL",
+      "Git/GitHub",
+      "Postman",
+      "VS Code",
+      "Google Suite",
+      "Microsoft Excel",
+      "Selenium",
+    ],
   },
 ];
 
@@ -122,26 +173,40 @@ const projectCards = [
     title: "TripCraft AI",
     type: "AI Travel Planner",
     description:
-      "A personalized itinerary generator that uses Gemini 2.5 Pro to create day-wise travel plans, manage saved trips, and deliver a polished responsive experience.",
+      "An AI-powered travel planning app that generates personalized day-wise itineraries, securely stores trips, and delivers a modern full-stack experience.",
     highlights: [
-      "Built with React and TypeScript for a clean, scalable front end",
-      "Used Supabase for secure trip persistence and retrieval",
-      "Structured prompts and outputs for practical itinerary quality",
+      "Built with React 18, TypeScript, Tailwind CSS, and shadcn/ui for a polished front-end experience",
+      "Used Supabase Auth, PostgreSQL, RLS, and Edge Functions for secure trip persistence",
+      "Integrated Gemini 2.5 Pro to generate structured, useful itinerary plans",
     ],
-    stack: ["React", "TypeScript", "Gemini AI", "Supabase"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "Gemini 2.5 Pro",
+    ],
     links: [{ label: "Live Demo", href: "https://tripify-xi.vercel.app/" }],
   },
   {
     title: "Study Abroad-AI",
     type: "Recommendation Engine",
     description:
-      "A recommendation platform for study abroad aspirants that combines profile-aware matching, web scraping pipelines, and ML-driven ranking.",
+      "An AI-powered study abroad platform that combines profile-aware matching, dynamic filtering, scraping workflows, and ML-assisted recommendations.",
     highlights: [
-      "Used scraping pipelines to source university-related signals",
-      "Matched students to suitable universities using ML logic",
-      "Connected FastAPI and React for an end-to-end product flow",
+      "Built the product across React, Node.js, Express.js, and FastAPI-backed ML services",
+      "Used automation and scraping workflows to gather university-related data signals",
+      "Matched students to suitable universities through profile-based recommendation logic",
     ],
-    stack: ["Python", "FastAPI", "React", "Scikit-learn"],
+    stack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "MongoDB",
+      "Selenium",
+    ],
     links: [
       {
         label: "GitHub",
@@ -168,6 +233,11 @@ const achievements = [
       "Built projects that combine front-end interfaces, backend services, and applied AI logic in one coherent workflow.",
   },
   {
+    title: "Tata GenAI Data Analytics Simulation",
+    detail:
+      "Completed a job simulation focused on exploratory analysis, risk profiling, AI-enabled delinquency prediction, and business storytelling.",
+  },
+  {
     title: "Strong Academic Consistency",
     detail:
       "Maintained an 8.51 CGPA through the 7th semester while continuing to grow across AI/ML, data science, and software engineering.",
@@ -179,6 +249,7 @@ const strengths = [
   "Comfortable switching between model development and product implementation",
   "Able to communicate technical ideas clearly to both technical and non-technical audiences",
   "Motivated by real-world impact, not just proof-of-concept demos",
+  "Adaptable across engineering, analytics, research, and cross-functional collaboration",
 ];
 
 const researchPanels = [
@@ -205,6 +276,7 @@ const researchPanels = [
 ];
 
 const certifications = [
+  "GenAI Powered Data Analytics Job Simulation (Tata)",
   "Generative AI (IBM)",
   "Google Data Analytics",
   "Full-Stack Web Development (DevTown)",
@@ -217,6 +289,12 @@ const contactLinks = [
     label: "Email",
     value: "shreyadey1312@gmail.com",
     href: "mailto:shreyadey1312@gmail.com",
+  },
+  {
+    icon: <FaPhoneAlt />,
+    label: "Phone",
+    value: "+91 9863108568",
+    href: "tel:+919863108568",
   },
   {
     icon: <FaLinkedin />,
@@ -269,9 +347,10 @@ function App() {
               engineering-first mindset.
             </h1>
             <p className="hero-lead">
-              I am Shreya Dey, a final-year Computer Science undergraduate focused
-              on AI/ML, data science, and full-stack product development. I enjoy
-              building systems that are technically sound, visually polished, and
+              I am Shreya Dey, a final-year Computer Science undergraduate at
+              KIIT with hands-on experience across AI/ML, data science, research,
+              analytics, and full-stack product development. I enjoy building
+              systems that are technically sound, visually polished, and
               genuinely useful in practice.
             </p>
 
@@ -364,10 +443,10 @@ function App() {
             <p className="section-kicker">What Sets Me Apart</p>
             <h3>Balanced between technical depth and product execution.</h3>
             <p>
-              I am most effective in work that starts with a real problem and ends
-              with a polished, useful outcome. That usually means combining
-              analysis, experimentation, implementation, and iteration instead of
-              staying in only one layer.
+              I am most effective in work that starts with a real problem and
+              ends with a polished, useful outcome. That usually means combining
+              analysis, experimentation, implementation, iteration, and clear
+              communication instead of staying in only one layer.
             </p>
           </article>
           <article className="insight-card">
@@ -378,6 +457,33 @@ function App() {
               ))}
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section className="section-block" id="readiness">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Readiness</p>
+            <h2>Coursework, communication, and strengths that support delivery.</h2>
+          </div>
+          <p className="section-summary">
+            Alongside project work and research, my academic foundation and
+            working style help me contribute across technical, analytical, and
+            collaborative environments.
+          </p>
+        </div>
+
+        <div className="detail-grid">
+          {detailCards.map((card) => (
+            <article className="insight-card detail-card" key={card.title}>
+              <p className="section-kicker">{card.title}</p>
+              <ul className="check-list">
+                {card.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
 

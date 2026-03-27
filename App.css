@@ -456,6 +456,7 @@ img {
 }
 
 .focus-grid,
+.detail-grid,
 .expertise-grid,
 .project-grid,
 .research-grid,
@@ -467,6 +468,10 @@ img {
 }
 
 .focus-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -559,6 +564,10 @@ img {
   margin: 0.5rem 0 0.8rem;
   font-family: var(--font-heading);
   font-size: 1.06rem;
+}
+
+.detail-card .check-list {
+  margin-top: 0.4rem;
 }
 
 .check-list {
@@ -848,6 +857,7 @@ img {
   .project-grid,
   .research-grid,
   .focus-grid,
+  .detail-grid,
   .cert-grid,
   .expertise-grid {
     grid-template-columns: 1fr;
