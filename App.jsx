@@ -374,6 +374,7 @@ const contactLinks = [
 
 function App() {
   const resumeUrl = `${import.meta.env.BASE_URL}Shreya-Dey-Resume.html`;
+  const resumePdfUrl = `${import.meta.env.BASE_URL}Shreya-Dey-Resume.pdf`;
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -482,6 +483,16 @@ function App() {
               >
                 View Resume
                 <FaFileAlt />
+              </a>
+              <a
+                className="button button-secondary"
+                href={resumePdfUrl}
+                target="_blank"
+                rel="noreferrer"
+                download
+              >
+                Download PDF
+                <FaDownload />
               </a>
               <a
                 className="button button-secondary"
@@ -927,8 +938,18 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Resume
+                Web Resume
                 <FaDownload />
+              </a>
+              <a
+                className="button button-secondary"
+                href={resumePdfUrl}
+                target="_blank"
+                rel="noreferrer"
+                download
+              >
+                Download PDF
+                <FaFileAlt />
               </a>
               <a
                 className="button button-secondary"

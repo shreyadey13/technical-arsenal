@@ -40,6 +40,32 @@ The Vite base path is configured automatically for GitHub Pages builds, so the s
 
 `https://shreyadey13.github.io/technical-arsenal/`
 
+## Resume Download
+
+The repository now includes both:
+
+- `public/Shreya-Dey-Resume.html` for a browser-friendly resume page
+- `public/Shreya-Dey-Resume.pdf` for direct download
+
+On the live site, users can open the web resume or download the PDF version.
+
+## Custom Domain
+
+The repo is ready for a custom domain, but GitHub Pages still needs the real domain name and DNS setup.
+
+To connect a custom domain:
+
+1. Buy or choose the domain you want to use.
+2. Add a `CNAME` file in `public/` containing only that domain name.
+3. In GitHub, open `Settings -> Pages` and add the same custom domain.
+4. Point your domain DNS records to GitHub Pages according to GitHub's instructions.
+
+Example:
+
+```txt
+portfolio.yourdomain.com
+```
+
 ## Updating Content
 
 Portfolio content is currently managed in:
