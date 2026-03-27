@@ -46,18 +46,18 @@ const heroStats = [
 const focusCards = [
   {
     icon: <FiLayers />,
-    title: "AI and ML Product Thinking",
-    text: "I enjoy turning exploratory ideas into products with clear problem framing, measurable outcomes, and solid UX.",
+    title: "Applied AI Product Thinking",
+    text: "I enjoy shaping AI ideas into usable products with clear problem framing, measurable outcomes, and thoughtful user experience.",
   },
   {
     icon: <FiBarChart2 />,
     title: "Data-Led Decision Making",
-    text: "From preprocessing to model evaluation, I work comfortably across the full data workflow and communicate findings clearly.",
+    text: "From preprocessing to evaluation, I am comfortable across the full data workflow and can communicate insights in a practical, decision-ready way.",
   },
   {
     icon: <FiCode />,
-    title: "Full-Stack Execution",
-    text: "I can move from model logic to APIs and front-end delivery, which helps me ship complete and usable solutions.",
+    title: "End-to-End Execution",
+    text: "I can move from model logic to APIs and front-end delivery, which helps me ship polished solutions instead of disconnected prototypes.",
   },
 ];
 
@@ -67,7 +67,7 @@ const journey = [
     title: "B.Tech in Computer Science and Engineering",
     meta: "Kalinga Institute of Industrial Technology (KIIT) | 2022 - 2026",
     description:
-      "Current CGPA: 8.51 after 7th semester. Built a strong foundation across core CS, web development, data science, and machine learning.",
+      "Current CGPA: 8.51 after the 7th semester, backed by a strong foundation in core CS, software development, data science, and machine learning.",
   },
   {
     icon: <FaRocket />,
@@ -81,7 +81,7 @@ const journey = [
     title: "Published Research",
     meta: "IEEE Conference | 2025",
     description:
-      "Co-authored work on climate change and agricultural yield forecasting using a hybrid LSTM and Random Forest modeling approach.",
+      "Co-authored research on climate-aware agricultural yield forecasting using a hybrid LSTM and Random Forest modeling approach.",
   },
 ];
 
@@ -165,12 +165,12 @@ const achievements = [
   {
     title: "Full-Stack + AI Portfolio Projects",
     detail:
-      "Built projects that combine front-end interfaces, backend services, and applied AI logic in one workflow.",
+      "Built projects that combine front-end interfaces, backend services, and applied AI logic in one coherent workflow.",
   },
   {
     title: "Strong Academic Consistency",
     detail:
-      "Maintained an 8.51 CGPA through the 7th semester while growing across AI/ML, data science, and software engineering.",
+      "Maintained an 8.51 CGPA through the 7th semester while continuing to grow across AI/ML, data science, and software engineering.",
   },
 ];
 
@@ -233,7 +233,7 @@ const contactLinks = [
   {
     icon: <FaMapMarkerAlt />,
     label: "Location",
-    value: "Shillong, Meghalaya",
+    value: "Guwahati, Assam",
   },
 ];
 
@@ -265,14 +265,14 @@ function App() {
           <div className="hero-copy">
             <div className="eyebrow">Portfolio 2026</div>
             <h1>
-              Building reliable AI, data, and web experiences with a strong
-              engineering mindset.
+              Building reliable AI, data, and digital products with a calm,
+              engineering-first mindset.
             </h1>
             <p className="hero-lead">
               I am Shreya Dey, a final-year Computer Science undergraduate focused
-              on AI/ML, data science, and full-stack product development. I care
-              about shipping work that is both technically sound and genuinely
-              useful.
+              on AI/ML, data science, and full-stack product development. I enjoy
+              building systems that are technically sound, visually polished, and
+              genuinely useful in practice.
             </p>
 
             <div className="hero-actions">
@@ -300,7 +300,10 @@ function App() {
 
             <div className="hero-note">
               <FaRegLightbulb />
-              <span>Interested in SDE, AI/ML, and data-focused opportunities.</span>
+              <span>
+                Interested in SDE, AI/ML, data analyst, tech consultancy, HR,
+                and data-focused opportunities.
+              </span>
             </div>
 
             <div className="hero-stats">
@@ -341,7 +344,7 @@ function App() {
           </div>
           <p className="section-summary">
             My work sits at the intersection of engineering discipline, analytical
-            thinking, and curiosity-driven building. I enjoy moving from problem
+            thinking, and curiosity-driven building. I like moving from problem
             definition to a finished solution that people can actually use.
           </p>
         </div>
@@ -359,12 +362,12 @@ function App() {
         <div className="two-column-panel">
           <article className="insight-card">
             <p className="section-kicker">What Sets Me Apart</p>
-            <h3>Balanced between research depth and product execution.</h3>
+            <h3>Balanced between technical depth and product execution.</h3>
             <p>
-              I like work that starts with a real problem and ends with a polished,
-              useful outcome. That usually means combining analysis,
-              experimentation, implementation, and iteration instead of staying in
-              only one layer.
+              I am most effective in work that starts with a real problem and ends
+              with a polished, useful outcome. That usually means combining
+              analysis, experimentation, implementation, and iteration instead of
+              staying in only one layer.
             </p>
           </article>
           <article className="insight-card">
@@ -406,7 +409,7 @@ function App() {
             <p className="section-kicker">Skills</p>
             <h2>
               Technical depth across data workflows, product delivery, and
-              engineering basics.
+              engineering fundamentals.
             </h2>
           </div>
         </div>
@@ -437,8 +440,8 @@ function App() {
             <h2>Selected work that reflects how I think and build.</h2>
           </div>
           <p className="section-summary">
-            These projects combine applied AI, product design choices, and the
-            engineering needed to turn ideas into usable interfaces.
+            These projects combine applied AI, product thinking, and the
+            engineering discipline needed to turn ideas into usable experiences.
           </p>
         </div>
 
@@ -572,8 +575,9 @@ function App() {
               ideas.
             </h2>
             <p>
-              If you are hiring for software engineering, AI/ML, or data-centric
-              roles, I would love to connect and discuss how I can contribute.
+              If you are hiring for software engineering, AI/ML, data analyst,
+              tech consultancy, HR, or other data-focused roles, I would love to
+              connect and discuss how I can contribute.
             </p>
             <div className="hero-actions">
               <a
