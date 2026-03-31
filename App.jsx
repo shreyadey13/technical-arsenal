@@ -421,15 +421,8 @@ function App() {
     "--stagger": `${index * 90}ms`,
   });
 
-  const handlePointerMove = (event) => {
-    const root = event.currentTarget;
-    const rect = root.getBoundingClientRect();
-    root.style.setProperty("--pointer-x", `${event.clientX - rect.left}px`);
-    root.style.setProperty("--pointer-y", `${event.clientY - rect.top}px`);
-  };
-
   return (
-    <main className="site-shell interactive-shell" onMouseMove={handlePointerMove}>
+    <main className="site-shell interactive-shell">
       <div
         className="scroll-progress"
         aria-hidden="true"
@@ -438,7 +431,6 @@ function App() {
       <div className="site-noise" />
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
-      <div className="pointer-glow" />
 
       <section className="hero-panel">
         <header className="topbar">
