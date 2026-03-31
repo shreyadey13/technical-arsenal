@@ -51,25 +51,25 @@ const focusCards = [
   {
     icon: <FiLayers />,
     title: "Applied AI Product Thinking",
-    text: "I turn AI ideas into polished products with clear framing, useful outputs, and thoughtful user experience.",
+    text: "I like turning AI ideas into polished products with clear problem framing, measurable outcomes, and a user experience that feels deliberate.",
   },
   {
     icon: <FiBarChart2 />,
     title: "Data and Analytics Readiness",
-    text: "I work across analysis, evaluation, and storytelling, and I keep insights easy to understand.",
+    text: "From preprocessing and exploration to evaluation and storytelling, I work comfortably across the analytics workflow and communicate insights with business-facing clarity.",
   },
   {
     icon: <FiCode />,
     title: "End-to-End Execution",
-    text: "I can move from model logic to APIs, databases, and front-end delivery to ship complete solutions.",
+    text: "I can move from model logic to APIs, databases, and front-end delivery, which helps me ship complete solutions rather than disconnected prototypes.",
   },
 ];
 
 const availabilityTags = [
   "Open to 2026 graduate roles",
-  "SDE, AI/ML, and analytics",
-  "Consultancy and HR-friendly",
-  "Portfolio and resume ready",
+  "SDE and AI/ML opportunities",
+  "Data analyst and consultancy roles",
+  "Recruiter-friendly portfolio",
 ];
 
 const motionStripItems = [
@@ -86,26 +86,17 @@ const motionStripItems = [
 const heroFocusCards = [
   {
     label: "Currently Focused",
-    title: "AI products, analytics, and full-stack builds",
-    text: "I like work that blends problem solving, clean delivery, and strong presentation.",
+    title: "AI products, analytics workflows, and full-stack execution",
+    text: "I enjoy combining research depth, product polish, and practical engineering delivery.",
   },
   {
     label: "Best Fit Roles",
-    title: "SDE, data analyst, consultancy, AI/ML, and HR-facing roles",
-    text: "Best in teams that value adaptability, ownership, and clear communication.",
+    title: "SDE, AI/ML, data analyst, consultancy, and cross-functional roles",
+    text: "Open to teams that value thoughtful execution, adaptability, and clear communication.",
   },
 ];
 
 const heroSymbols = ["{ }", "< />", "AI", "SQL", "ML", "//"];
-
-const heroFloaters = [
-  { icon: "🛸", label: "ufo", className: "hero-floater-ufo" },
-  { icon: "💻", label: "laptop", className: "hero-floater-laptop" },
-  { icon: "👽", label: "alien", className: "hero-floater-alien" },
-  { icon: "🤖", label: "robot", className: "hero-floater-robot" },
-  { icon: "⭐", label: "star", className: "hero-floater-star" },
-  { icon: "🌙", label: "moon", className: "hero-floater-moon" },
-];
 
 const detailCards = [
   {
@@ -304,12 +295,12 @@ const valueCards = [
   {
     icon: <FiCode />,
     title: "I build beyond prototypes",
-    text: "I take ideas from exploration to polished interfaces and dependable end-to-end experiences.",
+    text: "I like taking ideas from experimentation to polished interfaces, stable APIs, and usable end-to-end experiences.",
   },
   {
     icon: <FiBarChart2 />,
     title: "I think analytically",
-    text: "My work stays grounded in evaluation, structured thinking, and clear communication.",
+    text: "My work is grounded in evaluation, structured reasoning, and clear communication of technical and business-facing insights.",
   },
   {
     icon: <FiLayers />,
@@ -468,13 +459,15 @@ function App() {
           <div className="hero-copy">
             <div className="eyebrow">Portfolio 2026</div>
             <h1>
-              Building <span>smart, polished digital work</span> across AI,
-              data, and product engineering.
+              Designing <span>calm, high-impact digital work</span> across AI,
+              analytics, and product engineering.
             </h1>
             <p className="hero-lead">
-              I am Shreya Dey, a final-year Computer Science student at KIIT
-              building thoughtful work across AI/ML, analytics, research, and
-              full-stack development.
+              I am Shreya Dey, a final-year Computer Science undergraduate at
+              KIIT with hands-on experience across AI/ML, data science,
+              analytics, research, and full-stack development. I enjoy building
+              systems that are reliable in engineering, sharp in thinking, and
+              polished in presentation.
             </p>
 
             <div className="hero-actions">
@@ -513,8 +506,8 @@ function App() {
             <div className="hero-note">
               <FaRegLightbulb />
               <span>
-                Interested in SDE, AI/ML, data analyst, consultancy, HR, and
-                data-focused opportunities.
+                Interested in SDE, AI/ML, data analyst, tech consultancy, HR,
+                and data-focused opportunities.
               </span>
             </div>
 
@@ -538,18 +531,6 @@ function App() {
 
           <div className="hero-visual">
             <div className="hero-visual-stage">
-              <div className="hero-decor-layer" aria-hidden="true">
-                <span className="hero-ring hero-ring-one" />
-                <span className="hero-ring hero-ring-two" />
-                {heroFloaters.map((item) => (
-                  <span
-                    key={item.label}
-                    className={`hero-floater ${item.className}`}
-                  >
-                    {item.icon}
-                  </span>
-                ))}
-              </div>
               <div className="hero-symbol-cloud" aria-hidden="true">
                 {heroSymbols.map((symbol, index) => (
                   <span key={`${symbol}-${index}`} className={`hero-symbol hero-symbol-${index + 1}`}>
@@ -605,8 +586,9 @@ function App() {
             <h2>A sharper, more complete picture of what I bring.</h2>
           </div>
           <p className="section-summary">
-            I like work that blends engineering clarity, analytical thinking,
-            and useful execution.
+            My work sits at the intersection of engineering discipline,
+            analytical thinking, and curiosity-driven building. I enjoy moving
+            from problem definition to solutions that people can genuinely use.
           </p>
         </div>
 
@@ -629,8 +611,10 @@ function App() {
             <p className="section-kicker">What Sets Me Apart</p>
             <h3>Balanced between technical depth and product execution.</h3>
             <p>
-              I do my best work when a problem needs both technical depth and a
-              polished final outcome.
+              I am most effective in work that starts with a real problem and
+              ends with a polished, useful outcome. That usually means
+              combining analysis, experimentation, implementation, iteration,
+              and communication instead of staying in only one layer.
             </p>
           </article>
           <article className="insight-card reveal-on-scroll" style={revealStyle(1)}>
@@ -651,8 +635,8 @@ function App() {
             <h2>What makes my work feel strong in both delivery and presentation.</h2>
           </div>
           <p className="section-summary">
-            I care about work that feels polished, communicates clearly, and
-            still holds up technically.
+            I care about outcomes that look polished, communicate clearly, and
+            still hold up technically when you inspect the details.
           </p>
         </div>
 
@@ -678,8 +662,9 @@ function App() {
             <h2>Coursework, communication, and strengths that support delivery.</h2>
           </div>
           <p className="section-summary">
-            My foundation combines core CS, practical project work, and a
-            collaborative mindset.
+            Alongside project work and research, my academic foundation and
+            working style help me contribute across technical, analytical, and
+            collaborative environments.
           </p>
         </div>
 
