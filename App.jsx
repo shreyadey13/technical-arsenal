@@ -98,6 +98,12 @@ const heroFocusCards = [
 
 const heroSymbols = ["{ }", "< />", "AI", "SQL", "ML", "//"];
 
+const heroHighlights = [
+  "AI/ML + analytics foundation",
+  "Research-backed problem solving",
+  "Strong presentation and product polish",
+];
+
 const detailCards = [
   {
     title: "Relevant Coursework",
@@ -462,6 +468,14 @@ function App() {
               polished in presentation.
             </p>
 
+            <div className="hero-highlight-row" aria-label="Quick highlights">
+              {heroHighlights.map((item) => (
+                <span className="hero-highlight-pill" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">
                 View Projects
@@ -523,6 +537,8 @@ function App() {
 
           <div className="hero-visual">
             <div className="hero-visual-stage">
+              <div className="hero-stage-glow" aria-hidden="true" />
+              <div className="hero-stage-grid" aria-hidden="true" />
               <div className="hero-symbol-cloud" aria-hidden="true">
                 {heroSymbols.map((symbol, index) => (
                   <span key={`${symbol}-${index}`} className={`hero-symbol hero-symbol-${index + 1}`}>
@@ -545,6 +561,15 @@ function App() {
                   <span>Full Stack</span>
                 </div>
               </div>
+
+              <article className="hero-spotlight-card">
+                <p className="hero-spotlight-label">Available For</p>
+                <h3>2026 roles across software, AI/ML, analytics, and consultancy.</h3>
+                <p>
+                  I bring a balanced mix of technical depth, communication, and
+                  polished execution.
+                </p>
+              </article>
             </div>
 
             <div className="hero-side-grid">
