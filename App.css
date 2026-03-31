@@ -883,15 +883,15 @@ img {
 }
 
 .focus-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .detail-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .value-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .focus-card,
@@ -902,6 +902,19 @@ img {
 .insight-card,
 .achievement-card {
   border-radius: var(--radius-lg);
+}
+
+.focus-grid > .focus-card:nth-child(1),
+.focus-grid > .focus-card:nth-child(2),
+.value-grid > .value-card:nth-child(1),
+.value-grid > .value-card:nth-child(2),
+.detail-grid > .detail-card {
+  grid-column: span 3;
+}
+
+.focus-grid > .focus-card:nth-child(3),
+.value-grid > .value-card:nth-child(3) {
+  grid-column: span 6;
 }
 
 .focus-card {
@@ -915,6 +928,25 @@ img {
   box-shadow: var(--shadow);
 }
 
+.focus-grid > .focus-card:nth-child(1) {
+  background:
+    radial-gradient(circle at top right, rgba(118, 215, 196, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.focus-grid > .focus-card:nth-child(2) {
+  background:
+    radial-gradient(circle at top right, rgba(241, 177, 93, 0.16), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.focus-grid > .focus-card:nth-child(3) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
 .value-card {
   position: relative;
   padding: 1.55rem;
@@ -926,6 +958,25 @@ img {
     linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   box-shadow: var(--shadow);
   transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.value-grid > .value-card:nth-child(1) {
+  background:
+    radial-gradient(circle at top right, rgba(118, 215, 196, 0.14), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.value-grid > .value-card:nth-child(2) {
+  background:
+    radial-gradient(circle at top right, rgba(241, 177, 93, 0.14), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.value-grid > .value-card:nth-child(3) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
 }
 
 .focus-card::after,
@@ -1005,6 +1056,25 @@ img {
   box-shadow: var(--shadow);
 }
 
+.detail-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card::before,
+.achievement-card::before,
+.research-card::before,
+.cert-card::before,
+.contact-card::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  width: calc(100% - 2rem);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(118, 215, 196, 0), rgba(118, 215, 196, 0.7), rgba(241, 177, 93, 0.45), rgba(241, 177, 93, 0));
+}
+
 .insight-card h3,
 .achievement-card h3 {
   margin: 0.55rem 0 0.95rem;
@@ -1032,6 +1102,18 @@ img {
 .timeline-shell {
   display: grid;
   gap: 1rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline-shell::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(118, 215, 196, 0.65), rgba(241, 177, 93, 0.45));
 }
 
 .timeline-card {
@@ -1046,6 +1128,11 @@ img {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 55%),
     rgba(16, 22, 34, 0.82);
+  margin-left: 0.85rem;
+}
+
+.timeline-card:nth-child(even) {
+  margin-left: 1.8rem;
 }
 
 .timeline-meta,
@@ -1068,6 +1155,20 @@ img {
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.07);
   background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 56%),
+    rgba(16, 22, 34, 0.82);
+}
+
+.expertise-grid > .expertise-card:nth-child(1) {
+  background:
+    radial-gradient(circle at top right, rgba(118, 215, 196, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 56%),
+    rgba(16, 22, 34, 0.82);
+}
+
+.expertise-grid > .expertise-card:nth-child(2) {
+  background:
+    radial-gradient(circle at top right, rgba(241, 177, 93, 0.14), transparent 28%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 56%),
     rgba(16, 22, 34, 0.82);
 }
@@ -1261,6 +1362,13 @@ img {
     rgba(16, 22, 34, 0.82);
 }
 
+.research-grid > .research-card:nth-child(2) {
+  background:
+    radial-gradient(circle at top right, rgba(118, 215, 196, 0.1), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 55%),
+    rgba(16, 22, 34, 0.82);
+}
+
 .research-label {
   display: inline-flex;
   align-items: center;
@@ -1306,6 +1414,7 @@ img {
   gap: 1rem;
   padding: 1.2rem;
   border-radius: 28px;
+  align-items: stretch;
 }
 
 .contact-copy {
@@ -1324,6 +1433,9 @@ img {
 .contact-card {
   padding: 1.35rem;
   border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 58%),
+    rgba(16, 22, 34, 0.84);
 }
 
 .contact-row {
