@@ -51,17 +51,17 @@ const focusCards = [
   {
     icon: <FiLayers />,
     title: "Applied AI Product Thinking",
-    text: "I like turning AI ideas into polished products with clear problem framing, measurable outcomes, and a user experience that feels deliberate.",
+    text: "I turn AI ideas into polished products with clear framing and useful outcomes.",
   },
   {
     icon: <FiBarChart2 />,
     title: "Data and Analytics Readiness",
-    text: "From preprocessing and exploration to evaluation and storytelling, I work comfortably across the analytics workflow and communicate insights with business-facing clarity.",
+    text: "I work across analysis, evaluation, and insight storytelling with business-facing clarity.",
   },
   {
     icon: <FiCode />,
     title: "End-to-End Execution",
-    text: "I can move from model logic to APIs, databases, and front-end delivery, which helps me ship complete solutions rather than disconnected prototypes.",
+    text: "I can move from model logic to APIs, databases, and front-end delivery.",
   },
 ];
 
@@ -86,13 +86,13 @@ const motionStripItems = [
 const heroFocusCards = [
   {
     label: "Currently Focused",
-    title: "AI products, analytics workflows, and full-stack execution",
-    text: "I enjoy combining research depth, product polish, and practical engineering delivery.",
+    title: "AI products, analytics, and full-stack execution",
+    text: "I enjoy combining research depth with polished delivery.",
   },
   {
     label: "Best Fit Roles",
     title: "SDE, AI/ML, data analyst, consultancy, and cross-functional roles",
-    text: "Open to teams that value thoughtful execution, adaptability, and clear communication.",
+    text: "Best in teams that value adaptability, ownership, and clear communication.",
   },
 ];
 
@@ -139,21 +139,21 @@ const journey = [
     title: "B.Tech in Computer Science and Engineering",
     meta: "Kalinga Institute of Industrial Technology (KIIT) | 2022 - 2026",
     description:
-      "Current CGPA: 8.51 after the 7th semester, supported by a strong foundation in core CS, software development, data science, and machine learning.",
+      "Current CGPA: 8.51 after the 7th semester, backed by strong foundations in core CS, software, and AI/ML.",
   },
   {
     icon: <FaRocket />,
     title: "Research Internship",
     meta: "Mehta Family School of Data Science and AI, IIT Guwahati | Summer 2025",
     description:
-      "Contributed to flood detection research using satellite imagery and deep learning, with hands-on work in preprocessing, training pipelines, evaluation, and transfer learning.",
+      "Worked on flood detection research using satellite imagery, deep learning, and transfer learning workflows.",
   },
   {
     icon: <FaTrophy />,
     title: "Published Research",
     meta: "IEEE Conference | 2025",
     description:
-      "Co-authored research on climate-aware agricultural yield forecasting using a hybrid LSTM and Random Forest modeling approach.",
+      "Co-authored research on climate-aware agricultural yield forecasting using hybrid modeling.",
   },
 ];
 
@@ -216,11 +216,11 @@ const projectCards = [
     year: "2026",
     accent: "featured-mint",
     description:
-      "An AI-powered travel planning app that generates personalized day-wise itineraries, securely stores trips, and delivers a polished full-stack experience.",
+      "An AI travel planner that creates day-wise itineraries and stores trips through a polished full-stack experience.",
     highlights: [
-      "Built with React 18, TypeScript, Tailwind CSS, and shadcn/ui for a polished front-end experience",
-      "Used Supabase Auth, PostgreSQL, RLS, and Edge Functions for secure trip persistence and retrieval",
-      "Integrated Gemini 2.5 Pro to generate structured, high-utility itinerary plans",
+      "Built with React, TypeScript, Tailwind CSS, and shadcn/ui",
+      "Used Supabase Auth, PostgreSQL, RLS, and Edge Functions",
+      "Integrated Gemini 2.5 Pro for structured itinerary generation",
     ],
     stack: [
       "React",
@@ -238,11 +238,11 @@ const projectCards = [
     year: "2025",
     accent: "featured-gold",
     description:
-      "An AI-powered study abroad platform that combines profile-aware matching, dynamic filtering, scraping workflows, and ML-assisted recommendations.",
+      "An AI study abroad platform with profile-aware matching, filtering, scraping, and ML-assisted recommendations.",
     highlights: [
-      "Built the product across React, Node.js, Express.js, and FastAPI-backed ML services",
-      "Used automation and scraping workflows to gather university and profile-related signals",
-      "Matched students to suitable universities through profile-aware recommendation logic",
+      "Built across React, Node.js, Express.js, and FastAPI services",
+      "Used automation and scraping for university and profile signals",
+      "Matched students through profile-aware recommendation logic",
     ],
     stack: [
       "React",
@@ -290,23 +290,23 @@ const achievements = [
 ];
 
 const strengths = [
-  "Problem solving with a structured engineering mindset",
-  "Comfortable switching between model development and product implementation",
-  "Able to communicate technical ideas clearly to both technical and non-technical audiences",
-  "Motivated by real-world impact, not just proof-of-concept demos",
-  "Adaptable across engineering, analytics, research, and cross-functional collaboration",
+  "Structured problem solving",
+  "Comfortable across models and product delivery",
+  "Clear communication for technical and non-technical audiences",
+  "Focused on useful, real-world outcomes",
+  "Adaptable across engineering, analytics, and research",
 ];
 
 const valueCards = [
   {
     icon: <FiCode />,
     title: "I build beyond prototypes",
-    text: "I like taking ideas from experimentation to polished interfaces, stable APIs, and usable end-to-end experiences.",
+    text: "I take ideas from experimentation to polished interfaces and usable end-to-end experiences.",
   },
   {
     icon: <FiBarChart2 />,
     title: "I think analytically",
-    text: "My work is grounded in evaluation, structured reasoning, and clear communication of technical and business-facing insights.",
+    text: "My work is grounded in evaluation, structured reasoning, and clear communication.",
   },
   {
     icon: <FiLayers />,
@@ -320,7 +320,7 @@ const researchPanels = [
     title: "Flood Detection Using Satellite Imagery",
     label: "Research Internship",
     description:
-      "Designed and improved deep learning workflows for semantic segmentation of water bodies from satellite imagery, with emphasis on transfer learning and robust remote sensing analysis.",
+      "Worked on deep learning workflows for flood segmentation from satellite imagery, with emphasis on transfer learning.",
     badges: [
       "Transfer Learning",
       "Deep Learning",
@@ -332,7 +332,7 @@ const researchPanels = [
     title: "Quantifying the Impact of Climate Change on Agriculture Yield in Odisha",
     label: "Publication",
     description:
-      "Proposed a hybrid forecasting approach using LSTM and Random Forest to analyze how shifting climate variables affect crop productivity across time.",
+      "Proposed a hybrid LSTM and Random Forest approach for climate-aware crop yield forecasting.",
     badges: ["LSTM", "Random Forest", "Forecasting", "Climate Analytics"],
     link: "https://drive.google.com/file/d/10LqzdxdJVZT_jE771glSb40GZegOPuny/view?usp=sharing",
   },
@@ -462,10 +462,9 @@ function App() {
             </h1>
             <p className="hero-lead">
               I am Shreya Dey, a final-year Computer Science undergraduate at
-              KIIT with hands-on experience across AI/ML, data science,
-              analytics, research, and full-stack development. I enjoy building
-              systems that are reliable in engineering, sharp in thinking, and
-              polished in presentation.
+              KIIT with hands-on experience across AI/ML, analytics, research,
+              and full-stack development. I like building work that feels
+              reliable, clear, and polished.
             </p>
 
             <div className="hero-highlight-row" aria-label="Quick highlights">
@@ -513,7 +512,7 @@ function App() {
               <FaRegLightbulb />
               <span>
                 Interested in SDE, AI/ML, data analyst, tech consultancy, HR,
-                and data-focused opportunities.
+                and data-focused roles.
               </span>
             </div>
 
@@ -565,10 +564,7 @@ function App() {
               <article className="hero-spotlight-card">
                 <p className="hero-spotlight-label">Available For</p>
                 <h3>2026 roles across software, AI/ML, analytics, and consultancy.</h3>
-                <p>
-                  I bring a balanced mix of technical depth, communication, and
-                  polished execution.
-                </p>
+                <p>I bring technical depth, clear communication, and polished execution.</p>
               </article>
             </div>
 
@@ -603,9 +599,8 @@ function App() {
             <h2>A sharper, more complete picture of what I bring.</h2>
           </div>
           <p className="section-summary">
-            My work sits at the intersection of engineering discipline,
-            analytical thinking, and curiosity-driven building. I enjoy moving
-            from problem definition to solutions that people can genuinely use.
+            I enjoy work that blends engineering clarity, analytical thinking,
+            and useful execution.
           </p>
         </div>
 
@@ -628,10 +623,8 @@ function App() {
             <p className="section-kicker">What Sets Me Apart</p>
             <h3>Balanced between technical depth and product execution.</h3>
             <p>
-              I am most effective in work that starts with a real problem and
-              ends with a polished, useful outcome. That usually means
-              combining analysis, experimentation, implementation, iteration,
-              and communication instead of staying in only one layer.
+              I do my best work when a problem needs both technical depth and a
+              polished final outcome.
             </p>
           </article>
           <article className="insight-card reveal-on-scroll" style={revealStyle(1)}>
@@ -652,8 +645,8 @@ function App() {
             <h2>What makes my work feel strong in both delivery and presentation.</h2>
           </div>
           <p className="section-summary">
-            I care about outcomes that look polished, communicate clearly, and
-            still hold up technically when you inspect the details.
+            I care about work that looks polished, communicates clearly, and
+            still holds up technically.
           </p>
         </div>
 
@@ -679,9 +672,8 @@ function App() {
             <h2>Coursework, communication, and strengths that support delivery.</h2>
           </div>
           <p className="section-summary">
-            Alongside project work and research, my academic foundation and
-            working style help me contribute across technical, analytical, and
-            collaborative environments.
+            My foundation combines core CS, project work, and a collaborative
+            mindset.
           </p>
         </div>
 
@@ -770,8 +762,8 @@ function App() {
             <h2>Selected work that reflects how I think and build.</h2>
           </div>
           <p className="section-summary">
-            These projects reflect how I combine applied AI, product thinking,
-            and engineering discipline to turn ideas into usable experiences.
+            These projects show how I combine applied AI, product thinking, and
+            engineering discipline.
           </p>
         </div>
 
@@ -838,7 +830,7 @@ function App() {
             <h2>Signals that reinforce both credibility and growth.</h2>
           </div>
           <p className="section-summary">
-            These milestones best reflect how I am growing as an engineer,
+            These milestones best reflect my growth as an engineer,
             researcher, and builder.
           </p>
         </div>
