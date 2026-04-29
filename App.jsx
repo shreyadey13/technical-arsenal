@@ -211,6 +211,33 @@ const expertise = [
 
 const projectCards = [
   {
+    title: "Atlas Runtime",
+    type: "Config-Driven App Platform",
+    year: "2026",
+    accent: "featured-mint",
+    description:
+      "A dynamic application runtime that generates UI, CRUD workflows, auth-style access, CSV import, dashboards, and notifications from JSON configuration.",
+    highlights: [
+      "Rendered forms, tables, dashboards, and navigation dynamically from config",
+      "Built validation, user-scoped demo data, CSV import, and notification workflows",
+      "Designed a polished responsive interface suitable for evaluator testing and portfolio review",
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Config-Driven UI",
+    ],
+    links: [
+      {
+        label: "Live Demo",
+        href: `${import.meta.env.BASE_URL}dynamic-runtime/`,
+      },
+    ],
+  },
+  {
     title: "TripCraft AI",
     type: "AI Travel Planner",
     year: "2026",
